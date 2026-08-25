@@ -1,1 +1,1061 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dal Santo Logística | Chapecó - SC</title>
+<meta name="description" content="Dal Santo Logística — transporte rodoviário de cargas especiais, produtos perigosos, alimentos e cosméticos. Mais de 35 anos de tradição. Chapecó - SC.">
+<style>
+/* =========================================================
+   1. RESET & VARIÁVEIS DE IDENTIDADE VISUAL
+   ========================================================= */
+:root{
+  --azul-aco: #3E6FA8;
+  --azul-aco-escuro: #244F82;
+  --azul-marinho: #0B2545;
+  --azul-marinho-2: #123259;
+  --branco: #FFFFFF;
+  --cinza-claro: #F2F4F7;
+  --prata: #B8C2CE;
+  --cinza-texto: #5B5F6E;
+  --cinza-linha: #E3E4E8;
+  --font-display: 'Arial Narrow', 'Segoe UI Semibold', Arial, sans-serif;
+  --font-body: -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --radius: 8px;
+  --sombra: 0 16px 32px -20px rgba(11,37,69,.35);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);color:var(--azul-marinho);background:var(--branco);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;}
+ul{list-style:none;}
+:focus-visible{outline:3px solid var(--azul-aco);outline-offset:2px;}
+.container{max-width:1200px;margin:0 auto;padding:0 24px;}
 
+/* =========================================================
+   2. ANIMAÇÕES
+   ========================================================= */
+@keyframes fadeInUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+.reveal{animation:fadeInUp .7s ease both;}
+.reveal-delay-1{animation-delay:.1s;}
+.reveal-delay-2{animation-delay:.2s;}
+
+/* =========================================================
+   3. HEADER + LOGOTIPO CSS
+   ========================================================= */
+header{background:var(--azul-marinho);position:sticky;top:0;z-index:1000;border-bottom:3px solid var(--azul-aco);}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;}
+.brand{display:flex;align-items:center;gap:14px;}
+.logo-ds{
+  width:52px;height:52px;border-radius:50%;
+  background:var(--azul-marinho-2);
+  border:3px solid var(--prata);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  box-shadow:0 0 14px rgba(184,194,206,.35), 0 0 0 3px rgba(184,194,206,.12);
+}
+.logo-ds span{
+  font-family:var(--font-display);font-weight:700;color:var(--prata);
+  font-size:16px;letter-spacing:.02em;
+}
+.brand-name{font-family:var(--font-display);font-weight:700;color:#fff;font-size:20px;letter-spacing:.02em;line-height:1.1;}
+.brand-name small{display:block;font-family:var(--font-body);font-weight:400;font-size:11px;color:#9a9dae;letter-spacing:.12em;text-transform:uppercase;margin-top:2px;}
+nav.main-nav ul{display:flex;gap:28px;}
+nav.main-nav a{color:#d7d8e0;font-weight:500;font-size:14px;padding:6px 2px;border-bottom:2px solid transparent;transition:.2s;}
+nav.main-nav a:hover{color:#fff;border-color:var(--azul-aco);}
+.nav-actions{display:flex;align-items:center;gap:16px;}
+.btn{display:inline-flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;padding:11px 22px;border-radius:5px;transition:.2s;}
+.btn-primary{background:var(--azul-aco);color:#fff;box-shadow:0 8px 18px -8px rgba(62,111,168,.6);}
+.btn-primary:hover{background:var(--azul-aco-escuro);transform:translateY(-2px);}
+.btn-outline{border:1.5px solid rgba(255,255,255,.35);color:#fff;}
+.btn-outline:hover{border-color:var(--azul-aco);color:var(--azul-aco);transform:translateY(-2px);}
+.btn-dark{background:var(--azul-marinho);color:#fff;}
+.btn-dark:hover{background:var(--azul-marinho-2);transform:translateY(-2px);}
+.btn-checklist{background:linear-gradient(135deg,var(--azul-aco),var(--azul-aco-escuro));color:#fff;font-weight:700;box-shadow:0 8px 20px -8px rgba(62,111,168,.7);}
+.btn-checklist:hover{transform:translateY(-2px) scale(1.02);}
+.btn-bell{
+  position:relative;color:#fff;background:var(--azul-marinho-2);border:1px solid rgba(255,255,255,.2);
+  width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:17px;flex-shrink:0;
+}
+.btn-bell:hover{border-color:var(--azul-aco);}
+.btn-bell .dot{
+  position:absolute;top:3px;right:3px;width:11px;height:11px;border-radius:50%;
+  background:var(--azul-aco);display:none;border:2px solid var(--azul-marinho);
+}
+.btn-bell .dot.show{display:block;animation:pulse-dot 1.6s infinite;}
+@keyframes pulse-dot{
+  0%{box-shadow:0 0 0 0 rgba(62,111,168,.6);}
+  70%{box-shadow:0 0 0 8px rgba(62,111,168,0);}
+  100%{box-shadow:0 0 0 0 rgba(62,111,168,0);}
+}
+.burger{display:none;color:#fff;font-size:26px;}
+.mobile-nav{display:none;flex-direction:column;gap:2px;background:var(--azul-marinho-2);padding:12px 24px;}
+.mobile-nav.active{display:flex;}
+.mobile-nav a,.mobile-nav button{color:#d7d8e0;padding:10px 0;font-size:15px;text-align:left;}
+
+/* =========================================================
+   4. HERO
+   ========================================================= */
+.hero{position:relative;min-height:80vh;display:flex;align-items:center;overflow:hidden;}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(100deg, rgba(11,37,69,.97) 25%, rgba(11,37,69,.85) 60%, rgba(62,111,168,.55) 100%),
+    repeating-linear-gradient(115deg, rgba(184,194,206,.05) 0px, rgba(184,194,206,.05) 2px, transparent 2px, transparent 60px),
+    radial-gradient(ellipse at 80% 20%, rgba(62,111,168,.35), transparent 60%),
+    var(--azul-marinho);
+  will-change:transform;
+}
+.hero-content{max-width:660px;padding:80px 0;position:relative;z-index:2;}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--azul-aco);font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:18px;}
+.eyebrow::before{content:"";width:34px;height:2px;background:var(--azul-aco);}
+.hero h1{font-family:var(--font-display);color:#fff;font-weight:700;font-size:clamp(32px,5vw,54px);line-height:1.1;letter-spacing:.01em;margin-bottom:20px;}
+.hero h1 em{font-style:normal;color:var(--azul-aco);}
+.hero p{color:#c8c9d4;font-size:16.5px;max-width:540px;margin-bottom:34px;}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+.btn-lg{padding:15px 30px;font-size:15px;}
+.hero-badges{display:flex;gap:28px;margin-top:50px;padding-top:26px;border-top:1px solid rgba(255,255,255,.15);flex-wrap:wrap;}
+.hero-badge{color:#c8c9d4;font-size:13px;display:flex;align-items:center;gap:8px;}
+.hero-badge b{color:#fff;font-family:var(--font-display);font-size:15px;font-weight:700;}
+
+/* =========================================================
+   5. SEÇÕES GERAIS
+   ========================================================= */
+section{padding:88px 0;}
+.bg-cinza{background:var(--cinza-claro);}
+.section-head{max-width:680px;margin-bottom:48px;}
+.section-eyebrow{color:var(--azul-aco);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;display:block;}
+.section-head h2{font-family:var(--font-display);color:var(--azul-marinho);font-weight:700;font-size:clamp(26px,3.2vw,40px);line-height:1.15;}
+.section-head p{color:var(--cinza-texto);font-size:16px;margin-top:14px;}
+
+/* =========================================================
+   6. EMPRESA (sobre)
+   ========================================================= */
+.about-box{background:var(--azul-marinho);color:#fff;border-radius:var(--radius);padding:60px;position:relative;overflow:hidden;}
+.about-box::before{content:"";position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;border:2px solid rgba(62,111,168,.35);}
+.about-box::after{content:"";position:absolute;top:-20px;right:-20px;width:220px;height:220px;border-radius:50%;border:2px solid rgba(62,111,168,.2);}
+.about-box p{color:#c8c9d4;font-size:16.5px;max-width:780px;position:relative;z-index:2;margin-bottom:14px;}
+.about-box h2{font-family:var(--font-display);color:#fff;font-size:clamp(24px,3vw,34px);margin-bottom:20px;position:relative;z-index:2;}
+.about-box .section-eyebrow{color:var(--azul-aco);}
+
+/* =========================================================
+   7. ATUAÇÃO (serviços)
+   ========================================================= */
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.diff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.service-card{background:#fff;border:1px solid var(--cinza-linha);border-radius:var(--radius);padding:28px 22px;transition:.25s;border-top:3px solid var(--azul-marinho);}
+.service-card:hover{border-top-color:var(--azul-aco);box-shadow:var(--sombra);transform:translateY(-6px);}
+.service-icon{width:46px;height:46px;border-radius:50%;background:var(--azul-marinho);color:var(--azul-aco);display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+.service-icon svg{width:20px;height:20px;stroke:var(--azul-aco);fill:none;}
+.service-card h3{font-family:var(--font-display);font-size:16px;font-weight:700;margin-bottom:8px;}
+.service-card p{color:var(--cinza-texto);font-size:13.5px;}
+
+/* =========================================================
+   8. CLIENTES E PARCEIROS
+   ========================================================= */
+.partners-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.partner-card{background:#fff;border:1px solid var(--cinza-linha);border-radius:var(--radius);padding:32px;border-left:4px solid var(--azul-aco);}
+.partner-card h3{font-family:var(--font-display);font-size:19px;margin-bottom:10px;}
+.partner-card p{color:var(--cinza-texto);font-size:14.5px;}
+.partner-tag{display:inline-block;background:var(--azul-marinho);color:var(--azul-aco);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:3px;margin-bottom:14px;}
+
+/* =========================================================
+   9. VAGAS / NOTÍCIAS
+   ========================================================= */
+.cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.info-card{background:#fff;border:1px solid var(--cinza-linha);border-radius:var(--radius);overflow:hidden;border-top:3px solid var(--azul-marinho);transition:.25s;}
+.info-card:hover{border-top-color:var(--azul-aco);box-shadow:var(--sombra);transform:translateY(-4px);}
+.info-card .tag{display:inline-block;background:var(--azul-marinho);color:var(--azul-aco);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:3px;margin-bottom:14px;}
+.info-card-body{padding:24px;}
+.info-card h3{font-family:var(--font-display);font-size:17px;margin-bottom:8px;}
+.info-card .cidade{color:var(--azul-aco);font-size:12.5px;font-weight:600;margin-bottom:8px;display:block;}
+.info-card p{color:var(--cinza-texto);font-size:14px;margin-bottom:16px;white-space:pre-wrap;}
+.info-card .meta{color:#9a9dae;font-size:12px;display:block;margin-bottom:14px;}
+.empty-state{grid-column:1/-1;text-align:center;padding:44px 24px;border:1.5px dashed var(--cinza-linha);border-radius:var(--radius);}
+.empty-state p{color:var(--cinza-texto);font-size:14.5px;}
+
+/* =========================================================
+   10. FALE CONOSCO
+   ========================================================= */
+.contato-box{background:#fff;border:1px solid var(--cinza-linha);border-radius:var(--radius);padding:44px;box-shadow:var(--sombra);}
+.assunto-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0 32px;}
+.assunto-btn{
+  background:var(--cinza-claro);border:1.5px solid var(--cinza-linha);border-radius:6px;
+  padding:14px 12px;font-size:13.5px;font-weight:600;color:var(--azul-marinho);text-align:center;transition:.2s;
+}
+.assunto-btn:hover{border-color:var(--azul-aco);color:var(--azul-aco);}
+.assunto-btn.active{background:var(--azul-marinho);border-color:var(--azul-marinho);color:#fff;}
+.privacy-note{color:var(--cinza-texto);font-size:13px;font-style:italic;margin-bottom:8px;text-align:center;}
+.privacy-note strong{color:var(--azul-marinho);font-style:normal;}
+
+/* =========================================================
+   11. RODAPÉ
+   ========================================================= */
+.phone-bar{background:var(--prata);color:var(--azul-marinho);}
+.phone-bar-inner{display:flex;gap:40px;padding:18px 24px;flex-wrap:wrap;}
+.phone-bar b{display:block;font-family:var(--font-display);font-size:14px;letter-spacing:.04em;}
+.phone-bar span{font-size:13px;color:var(--azul-marinho-2);}
+footer{background:var(--azul-marinho);color:#c5c6d0;padding-top:56px;}
+.footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1.2fr;gap:48px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.08);}
+.footer-brand .brand-name{color:#fff;}
+.footer-brand p{color:#8c8fa0;font-size:14px;margin-top:16px;max-width:280px;}
+.social-row{display:flex;gap:10px;margin-top:22px;}
+.social-row a{width:38px;height:38px;border-radius:50%;border:1.5px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;color:#c5c6d0;transition:.2s;}
+.social-row a:hover{background:var(--azul-aco);border-color:var(--azul-aco);color:#fff;}
+.social-row svg{width:16px;height:16px;stroke:currentColor;fill:none;}
+footer h5{font-family:var(--font-display);color:#fff;font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;}
+footer ul li{margin-bottom:10px;color:#a3a5b3;font-size:14px;}
+footer ul a{color:#a3a5b3;transition:.2s;}
+footer ul a:hover{color:var(--azul-aco);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:22px 0;font-size:12.5px;color:#75778a;flex-wrap:wrap;gap:12px;}
+.footer-bottom .legal{display:flex;gap:22px;flex-wrap:wrap;}
+.footer-bottom a{color:#75778a;}
+.footer-bottom a:hover{color:var(--azul-aco);}
+.ti-access{opacity:.5;font-size:12px;}
+.ti-access:hover{opacity:1;}
+
+/* =========================================================
+   12. MODAIS
+   ========================================================= */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(11,37,69,.8);z-index:2000;align-items:center;justify-content:center;padding:20px;animation:fadeIn .2s ease;}
+.modal-overlay.active{display:flex;}
+.modal-box{background:#fff;border-radius:var(--radius);max-width:460px;width:100%;padding:36px 32px;position:relative;border-top:4px solid var(--azul-aco);max-height:88vh;overflow-y:auto;animation:fadeInUp .25s ease;}
+.modal-box.wide{max-width:760px;}
+.modal-close{position:absolute;top:16px;right:16px;background:var(--cinza-claro);width:32px;height:32px;border-radius:50%;font-size:16px;color:var(--azul-marinho);}
+.modal-box h3{font-family:var(--font-display);font-size:22px;margin-bottom:6px;}
+.modal-box .sub{color:var(--cinza-texto);font-size:14px;margin-bottom:24px;}
+.field{margin-bottom:16px;}
+.field label{display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--azul-marinho);}
+.field input,.field textarea,.field select{width:100%;padding:11px 13px;border:1.5px solid var(--cinza-linha);border-radius:5px;font-family:inherit;font-size:14.5px;}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--azul-aco);outline:none;}
+.error-msg{color:var(--azul-aco);font-size:13px;margin-top:8px;display:none;}
+.error-msg.show{display:block;}
+.success-msg{background:#EAF7EC;color:#1e7a34;padding:10px 14px;border-radius:5px;font-size:13.5px;margin-bottom:16px;display:none;}
+.success-msg.show{display:block;}
+
+.checklist-item{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid var(--cinza-linha);}
+.checklist-item input[type="checkbox"]{width:20px;height:20px;margin-top:2px;accent-color:var(--azul-aco);flex-shrink:0;}
+.checklist-item label{font-size:14.5px;color:var(--azul-marinho);}
+.checklist-progress{height:8px;background:var(--cinza-linha);border-radius:99px;margin:18px 0 22px;overflow:hidden;}
+.checklist-progress-bar{height:100%;background:var(--azul-aco);width:0%;transition:width .25s;}
+
+.admin-tabs{display:flex;gap:8px;margin-bottom:24px;border-bottom:2px solid var(--cinza-linha);flex-wrap:wrap;}
+.admin-tab{padding:10px 16px;font-weight:600;font-size:14px;color:var(--cinza-texto);border-bottom:2px solid transparent;margin-bottom:-2px;}
+.admin-tab.active{color:var(--azul-marinho);border-color:var(--azul-aco);}
+.admin-panel-header{background:var(--azul-marinho);margin:-36px -32px 24px;padding:20px 32px;border-radius:var(--radius) var(--radius) 0 0;display:flex;align-items:center;justify-content:space-between;}
+.admin-panel-header h3{color:#fff;margin:0;}
+.admin-panel-header .logo-ds{width:38px;height:38px;}
+.list-item{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--cinza-linha);border-radius:5px;margin-bottom:10px;}
+.list-item .del{color:var(--azul-aco);font-weight:600;font-size:13px;flex-shrink:0;}
+.list-item .info{font-size:13.5px;}
+.list-item .info small{display:block;color:var(--cinza-texto);}
+
+.vaga-selecionada{
+  background:var(--cinza-claro);border-left:3px solid var(--azul-aco);border-radius:4px;
+  padding:10px 14px;font-size:13.5px;margin-bottom:18px;
+}
+.vaga-selecionada b{color:var(--azul-marinho);}
+.form-note{color:var(--cinza-texto);font-size:11.5px;margin-top:6px;}
+.note-destaque{
+  background:#EAF1FB;border:1.5px solid var(--azul-aco);border-left:4px solid var(--azul-aco);
+  border-radius:6px;padding:12px 14px;color:var(--azul-marinho);font-size:13px;font-weight:600;
+  line-height:1.5;margin:4px 0 18px;
+}
+
+/* =========================================================
+   13. RESPONSIVIDADE
+   ========================================================= */
+@media (max-width:1024px){
+  .services-grid{grid-template-columns:repeat(3,1fr);}
+  .diff-grid{grid-template-columns:repeat(3,1fr);}
+  .about-box{padding:40px;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:960px){
+  nav.main-nav{display:none;}
+  .nav-actions{display:none;}
+  .burger{display:block;}
+  .cards-3{grid-template-columns:1fr;}
+  .diff-grid{grid-template-columns:1fr;}
+  .assunto-grid{grid-template-columns:1fr 1fr;}
+  .phone-bar-inner{gap:20px;}
+}
+@media (max-width:680px){
+  .services-grid{grid-template-columns:1fr 1fr;}
+  .diff-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:480px){
+  .services-grid{grid-template-columns:1fr;}
+  .about-box{padding:26px;}
+  .contato-box{padding:24px;}
+  .assunto-grid{grid-template-columns:1fr;}
+  section{padding:60px 0;}
+  .footer-grid{grid-template-columns:1fr;}
+  .nav-wrap{padding:12px 16px;}
+  .brand-name{font-size:17px;}
+  .logo-ds{width:44px;height:44px;}
+  .modal-box{padding:26px 20px;max-height:92vh;}
+  .modal-box.wide{padding:26px 18px;}
+  .admin-panel-header{margin:-26px -18px 20px;padding:16px 18px;}
+  .hero-badges{gap:18px;}
+  .hero-badge{font-size:12px;}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important;scroll-behavior:auto !important;}
+}
+</style>
+</head>
+<body>
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+<header>
+  <div class="nav-wrap container">
+    <div class="brand">
+      <div class="logo-ds" aria-hidden="true"><span>DS</span></div>
+      <div class="brand-name">Dal Santo Logística<small>"No caminho certo." · Chapecó, SC</small></div>
+    </div>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#empresa">Empresa</a></li>
+        <li><a href="#atuacao">Atuação</a></li>
+        <li><a href="#diferenciais">Diferenciais</a></li>
+        <li><a href="#vagas">Vagas</a></li>
+        <li><a href="#noticias">Notícias</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <button class="btn-bell" id="btn-atendimento" title="Painel de Atendimento" aria-label="Painel de Atendimento">
+        🔔<span class="dot" id="atendimento-dot"></span>
+      </button>
+      <button class="btn btn-checklist" id="btn-checklist">Checklist</button>
+    </div>
+    <button class="burger" id="btn-burger" aria-label="Abrir menu" aria-expanded="false">☰</button>
+  </div>
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="#inicio">Início</a>
+    <a href="#empresa">Empresa</a>
+    <a href="#atuacao">Atuação</a>
+    <a href="#diferenciais">Diferenciais</a>
+    <a href="#vagas">Vagas</a>
+    <a href="#noticias">Notícias</a>
+    <a href="#contato">Contato</a>
+    <button id="btn-checklist-mobile">Checklist</button>
+    <button id="btn-atendimento-mobile">🔔 Painel de Atendimento</button>
+  </div>
+</header>
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+<section class="hero" id="inicio">
+  <div class="hero-bg" id="hero-bg"></div>
+  <div class="container">
+    <div class="hero-content reveal">
+      <span class="eyebrow">Dal Santo Logística</span>
+      <h1>Conectando destinos com <em>segurança</em> e compromisso.</h1>
+      <p>Mais que transportar, nós fortalecemos negócios por todo o Brasil com soluções logísticas sob medida.</p>
+      <div class="hero-actions">
+        <a href="#empresa" class="btn btn-outline btn-lg">Conheça a Empresa</a>
+        <a href="#contato" class="btn btn-primary btn-lg">Solicitar Cotação</a>
+      </div>
+      <div class="hero-badges">
+        <div class="hero-badge"><b>+35 anos</b> De tradição na estrada</div>
+        <div class="hero-badge"><b>DAF · Mercedes-Benz</b> Frota de última geração</div>
+        <div class="hero-badge"><b>Sul · Sudeste · CO</b> Regiões atendidas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+<!-- =========================================================
+     EMPRESA
+     ========================================================= -->
+<section class="bg-cinza" id="empresa">
+  <div class="container">
+    <div class="about-box reveal">
+      <span class="section-eyebrow">Quem Somos</span>
+      <h2>História e confiança na estrada</h2>
+      <p>Com mais de 35 anos de história e tradição na estrada, a Dal Santo Logística consolidou-se no mercado como sinônimo de eficiência e qualidade no transporte rodoviário de cargas. Com sede estratégica em Chapecó (SC), nossa empresa evoluiu acompanhando as necessidades do mercado, mantendo sempre o compromisso original: cuidar de cada entrega como se fosse nossa.</p>
+      <p>Atuamos com responsabilidade e transparência, contando com profissionais altamente treinados e uma frota moderna, garantindo que o seu produto chegue ao destino com a máxima segurança.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     ATUAÇÃO (serviços)
+     ========================================================= -->
+<section id="atuacao">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Nossos Serviços</span>
+      <h2>Especialidades</h2>
+      <p>Soluções logísticas sob medida para diferentes perfis de carga.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="8" width="20" height="9" rx="1"/><path d="M6 17v2M18 17v2"/></svg></div>
+        <h3>Cargas Especiais e Lotação</h3>
+        <p>Atendimento especializado para demandas complexas e grandes volumes de mercadorias.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5l-8-3z"/></svg></div>
+        <h3>Produtos Perigosos e Químicos</h3>
+        <p>Transporte rigorosamente adequado às normas e certificações de segurança exigidas por lei.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="10" rx="1"/><path d="M7 9V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"/></svg></div>
+        <h3>Alimentos e Perecíveis</h3>
+        <p>Logística precisa para o segmento alimentício, garantindo integridade e conservação dos produtos.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
+        <h3>Cosméticos e Higiene</h3>
+        <p>Distribuição ágil e cuidadosa para o setor de cuidados pessoais e cosméticos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     DIFERENCIAIS DA EMPRESA
+     ========================================================= -->
+<section class="bg-cinza" id="diferenciais">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Por que a Dal Santo</span>
+      <h2>Diferenciais da Empresa</h2>
+      <p>O que garante segurança e agilidade em cada operação.</p>
+    </div>
+    <div class="diff-grid">
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="8" width="20" height="9" rx="1"/><path d="M6 17v2M18 17v2"/></svg></div>
+        <h3>Frota de Última Geração</h3>
+        <p>Caminhões modernos (marcas referência como DAF e Mercedes-Benz) com manutenção preventiva rigorosa.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5l-8-3z"/></svg></div>
+        <h3>Segurança Máxima</h3>
+        <p>Monitoramento constante, motoristas altamente capacitados e total conformidade com as leis de trânsito.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
+        <h3>Abrangência</h3>
+        <p>Atendimento focado nas principais rotas e conexões das regiões Sul, Sudeste e Centro-Oeste do país.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     VAGAS DE EMPREGO (dinâmico via localStorage)
+     ========================================================= -->
+<section id="vagas">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Recursos Humanos</span>
+      <h2>Vagas de Emprego</h2>
+      <p>Oportunidades publicadas pela equipe da Dal Santo Logística.</p>
+    </div>
+    <div class="cards-3" id="vagas-list"></div>
+  </div>
+</section>
+
+<!-- =========================================================
+     NOTÍCIAS (dinâmico via localStorage)
+     ========================================================= -->
+<section class="bg-cinza" id="noticias">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Fique por dentro</span>
+      <h2>Notícias e Comunicados</h2>
+      <p>Atualizações publicadas pela Dal Santo Logística.</p>
+    </div>
+    <div class="cards-3" id="noticias-list"></div>
+  </div>
+</section>
+
+<!-- =========================================================
+     FALE CONOSCO
+     ========================================================= -->
+<section id="contato">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Contato</span>
+      <h2>Fale Conosco</h2>
+      <p>Selecione o assunto do seu contato e envie sua mensagem diretamente para a nossa equipe.</p>
+    </div>
+    <form class="contato-box reveal" id="form-contato">
+      <p class="privacy-note">A Dal Santo Logística utilizará seus dados pessoais apenas para receber e dar seguimento ao seu contato.</p>
+      <p class="success-msg" id="contato-success">Mensagem enviada com sucesso! Em breve entraremos em contato.</p>
+      <div class="assunto-grid" id="assunto-grid">
+        <button type="button" class="assunto-btn" data-assunto="Cotação de Frete">Cotação de Frete</button>
+        <button type="button" class="assunto-btn" data-assunto="Trabalhe Conosco">Trabalhe Conosco</button>
+        <button type="button" class="assunto-btn" data-assunto="Cargas Especiais">Cargas Especiais</button>
+        <button type="button" class="assunto-btn" data-assunto="Produtos Perigosos">Produtos Perigosos</button>
+        <button type="button" class="assunto-btn" data-assunto="Parcerias">Parcerias</button>
+        <button type="button" class="assunto-btn" data-assunto="Outros">Outros</button>
+      </div>
+      <div class="field">
+        <label for="contato-email">E-mail</label>
+        <input type="email" name="email" id="contato-email" placeholder="seu@email.com" required>
+      </div>
+      <div class="field">
+        <label for="contato-telefone">Telefone (de preferência WhatsApp)</label>
+        <input type="tel" name="telefone" id="contato-telefone" placeholder="(49) 90000-0000" required>
+      </div>
+      <div class="field">
+        <label for="contato-assunto">Assunto selecionado</label>
+        <input type="text" name="assunto" id="contato-assunto" placeholder="Selecione uma opção acima" readonly required>
+      </div>
+      <div class="field">
+        <label for="contato-mensagem">Mensagem</label>
+        <textarea name="mensagem" id="contato-mensagem" rows="4" placeholder="Escreva sua mensagem" required></textarea>
+      </div>
+      <p class="error-msg" id="contato-error">Preencha e-mail, assunto e mensagem.</p>
+      <button type="submit" class="btn btn-primary btn-lg" id="btn-contato-enviar">Enviar Mensagem</button>
+      <p class="form-note" style="text-align:center;margin-top:12px;">💡 Nota: caso precise enviar algum documento ou anexo, você poderá anexá-lo diretamente pelo WhatsApp após o envio desta mensagem.</p>
+    </form>
+  </div>
+</section>
+
+<!-- =========================================================
+     RODAPÉ
+     ========================================================= -->
+<div class="phone-bar">
+  <div class="container phone-bar-inner">
+    <div><b>Comercial / Logística</b><span>(49) 3329-8314</span></div>
+    <div><b>WhatsApp Comercial / RH</b><span>(49) 9 8805-3009</span></div>
+    <div><b>Cotações</b><span>logistica@dalsantologistica.com.br</span></div>
+    <div><b>Trabalhe Conosco</b><span>rh@dalsantologistica.com.br</span></div>
+  </div>
+</div>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand" style="margin-bottom:6px;">
+          <div class="logo-ds" aria-hidden="true"><span>DS</span></div>
+          <div class="brand-name">Dal Santo Logística</div>
+        </div>
+        <p>Mais de 35 anos conectando destinos com segurança.</p>
+        <div class="social-row">
+          <a href="#" aria-label="Instagram — link não informado" title="Instagram — link não informado">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook — link não informado" title="Facebook — link não informado">
+            <svg viewBox="0 0 24 24"><path d="M15 4h-2a4 4 0 0 0-4 4v3H7v4h2v7h4v-7h3l1-4h-4V8a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn — link não informado" title="LinkedIn — link não informado">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 13v4"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h5>Navegação</h5>
+        <ul>
+          <li><a href="#empresa">Empresa</a></li>
+          <li><a href="#atuacao">Atuação</a></li>
+          <li><a href="#diferenciais">Diferenciais</a></li>
+          <li><a href="#vagas">Vagas</a></li>
+          <li><a href="#noticias">Notícias</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5>Endereço</h5>
+        <ul>
+          <li>Rua Inês Battiston, 125-E</li>
+          <li>Bairro Efapi</li>
+          <li>Chapecó — SC, CEP 89810-414</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>Dal Santo Transportes Ltda · © 2026 Todos os direitos reservados.</span>
+      <div class="legal">
+        <a href="#" class="ti-access" id="btn-ti-access">Acesso TI</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- =========================================================
+     MODAL: LOGIN TI
+     ========================================================= -->
+<div class="modal-overlay" id="modal-login">
+  <div class="modal-box">
+    <button class="modal-close" data-close="modal-login" aria-label="Fechar">✕</button>
+    <div class="logo-ds" style="margin-bottom:18px;" aria-hidden="true"><span>DS</span></div>
+    <h3>Acesso Restrito — TI</h3>
+    <p class="sub">Painel administrativo interno. Uso exclusivo da equipe autorizada.</p>
+    <div class="field">
+      <label for="ti-password">Senha de acesso</label>
+      <input type="password" id="ti-password" placeholder="••••••••">
+    </div>
+    <p class="error-msg" id="ti-error">Senha incorreta. Tente novamente.</p>
+    <button class="btn btn-primary btn-lg" style="width:100%;margin-top:8px;" id="btn-ti-submit">Entrar</button>
+  </div>
+</div>
+
+<!-- =========================================================
+     MODAL: PAINEL ADMINISTRATIVO (TI)
+     ========================================================= -->
+<div class="modal-overlay" id="modal-admin">
+  <div class="modal-box wide">
+    <button class="modal-close" data-close="modal-admin" aria-label="Fechar">✕</button>
+    <div class="admin-panel-header">
+      <div class="brand" style="gap:12px;">
+        <div class="logo-ds" aria-hidden="true"><span>DS</span></div>
+        <h3>Painel Administrativo</h3>
+      </div>
+      <button class="btn btn-primary" id="btn-admin-logout" style="padding:8px 16px;font-size:13px;">Sair</button>
+    </div>
+    <div class="admin-tabs">
+      <button class="admin-tab active" data-tab="tab-atendimento">Atendimento</button>
+      <button class="admin-tab" data-tab="tab-vagas">Cadastrar Vaga</button>
+      <button class="admin-tab" data-tab="tab-noticias">Cadastrar Notícia</button>
+    </div>
+    <p class="success-msg" id="admin-success">Publicado com sucesso.</p>
+    <div class="admin-tab-content" id="tab-atendimento">
+      <p class="sub" style="margin-bottom:16px;">Mensagens recebidas pelo formulário de contato e pelas candidaturas de vagas (armazenadas neste navegador).</p>
+      <div id="admin-atendimento-list"></div>
+    </div>
+    <div class="admin-tab-content" id="tab-vagas" style="display:none;">
+      <div class="field"><label for="vaga-cargo">Cargo</label><input type="text" id="vaga-cargo" placeholder="Ex: Motorista Categoria E"></div>
+      <div class="field"><label for="vaga-cidade">Cidade</label><input type="text" id="vaga-cidade" placeholder="Ex: Chapecó - SC"></div>
+      <div class="field"><label for="vaga-desc">Descrição</label><textarea id="vaga-desc" rows="3" placeholder="Requisitos e responsabilidades da vaga"></textarea></div>
+      <button class="btn btn-primary" id="btn-publicar-vaga">Salvar</button>
+      <div style="margin-top:22px;" id="admin-vagas-list"></div>
+    </div>
+    <div class="admin-tab-content" id="tab-noticias" style="display:none;">
+      <div class="field"><label for="noticia-titulo">Título</label><input type="text" id="noticia-titulo" placeholder="Ex: Dal Santo Logística comunica..."></div>
+      <div class="field"><label for="noticia-texto">Texto</label><textarea id="noticia-texto" rows="4" placeholder="Conteúdo da notícia"></textarea></div>
+      <button class="btn btn-primary" id="btn-publicar-noticia">Salvar</button>
+      <div style="margin-top:22px;" id="admin-noticias-list"></div>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================
+     MODAL: FORMULÁRIO DE CONTRATAÇÃO (candidatura à vaga)
+     ========================================================= -->
+<div class="modal-overlay" id="modal-cadastro">
+  <div class="modal-box">
+    <button class="modal-close" data-close="modal-cadastro" aria-label="Fechar">✕</button>
+    <h3>Cadastrar-se</h3>
+    <p class="sub">Preencha seus dados. Você será direcionado ao WhatsApp da Dal Santo Logística.</p>
+    <p class="success-msg" id="cadastro-success">Inscrição enviada com sucesso!</p>
+    <div class="vaga-selecionada" id="vaga-selecionada-box">Vaga: <b id="vaga-selecionada-nome">Cadastro geral</b></div>
+
+    <!--
+      ENVIO 100% VIA WHATSAPP (wa.me): não há requisições de rede nem
+      servidor externo envolvidos. O JavaScript apenas monta o texto e
+      abre o link oficial da API do WhatsApp com window.open.
+    -->
+    <form id="form-candidatura">
+      <input type="hidden" name="vaga" id="cad-vaga">
+      <div class="field"><label for="cad-nome">Nome Completo</label><input type="text" name="nome" id="cad-nome" placeholder="Seu nome completo" required></div>
+      <div class="field"><label for="cad-resumo">Resumo Profissional / Sobre Você</label><textarea name="resumo" id="cad-resumo" rows="5" placeholder="Conte um pouco da sua experiência profissional" required></textarea></div>
+      <p class="note-destaque">💡 Nota: O texto do seu currículo será enviado na mensagem a seguir. Se desejar enviar seu PDF completo, anexe-o diretamente usando o clipe de arquivos do seu WhatsApp.</p>
+      <p class="error-msg" id="cadastro-error">Preencha nome completo e resumo profissional.</p>
+      <button type="submit" class="btn btn-primary btn-lg" style="width:100%;margin-top:8px;" id="btn-cadastro-submit">Enviar Inscrição</button>
+    </form>
+  </div>
+</div>
+
+<!-- =========================================================
+     MODAL: CHECKLIST DO MOTORISTA
+     ========================================================= -->
+<div class="modal-overlay" id="modal-checklist">
+  <div class="modal-box">
+    <button class="modal-close" data-close="modal-checklist" aria-label="Fechar">✕</button>
+    <h3>Checklist do Motorista</h3>
+    <p class="sub">Verificação de pré-viagem do veículo.</p>
+    <div class="checklist-progress"><div class="checklist-progress-bar" id="checklist-bar"></div></div>
+    <div id="checklist-items">
+      <div class="checklist-item"><input type="checkbox" id="chk1"><label for="chk1">Nível de óleo e água verificados</label></div>
+      <div class="checklist-item"><input type="checkbox" id="chk2"><label for="chk2">Pneus e estepe calibrados</label></div>
+      <div class="checklist-item"><input type="checkbox" id="chk3"><label for="chk3">Freios testados</label></div>
+      <div class="checklist-item"><input type="checkbox" id="chk4"><label for="chk4">Luzes e setas funcionando</label></div>
+      <div class="checklist-item"><input type="checkbox" id="chk5"><label for="chk5">Documentos do veículo e da carga conferidos</label></div>
+      <div class="checklist-item"><input type="checkbox" id="chk6"><label for="chk6">Cintos e equipamentos de segurança verificados</label></div>
+    </div>
+    <button class="btn btn-primary btn-lg" style="width:100%;margin-top:18px;" id="btn-checklist-reset">Reiniciar Checklist</button>
+  </div>
+</div>
+
+<script>
+/* =========================================================
+   JAVASCRIPT — Dal Santo Logística (Vanilla JS, localStorage)
+   ========================================================= */
+(function(){
+  'use strict';
+
+  /* Senha em texto puro: apenas demonstração visual, sem backend.
+     Não usar como proteção real de dados sensíveis. Troque antes de publicar. */
+  const SENHA_TI = "dalsanto123";
+
+  const $  = (id) => document.getElementById(id);
+  const qsa = (sel) => document.querySelectorAll(sel);
+  const openModal  = (id) => $(id).classList.add('active');
+  const closeModal = (id) => $(id).classList.remove('active');
+
+  const KEY_VAGAS = 'ds_vagas';
+  const KEY_NOTICIAS = 'ds_noticias';
+  const KEY_MENSAGENS = 'ds_mensagens';
+  const readStore  = (key) => JSON.parse(localStorage.getItem(key) || '[]');
+  const writeStore = (key, data) => localStorage.setItem(key, JSON.stringify(data));
+  function escapeHtml(str){ const d = document.createElement('div'); d.textContent = str; return d.innerHTML; }
+
+  /* -----------------------------------------------------------
+     PAINEL DE ATENDIMENTO (local, neste navegador)
+     Registra uma cópia da mensagem/candidatura em localStorage
+     para o painel de TI acompanhar em tempo real, com bipe sonoro
+     e bolinha vermelha — sem enviar nada para fora escondido do
+     usuário. O envio de verdade continua sendo o link do WhatsApp,
+     aberto às claras para a pessoa confirmar o envio.
+     ----------------------------------------------------------- */
+  function tocarBip(){
+    try{
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'sine';
+      osc.frequency.value = 880;
+      gain.gain.setValueAtTime(0.15, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.35);
+      osc.connect(gain); gain.connect(ctx.destination);
+      osc.start(); osc.stop(ctx.currentTime + 0.35);
+    }catch(e){ /* áudio bloqueado pelo navegador até haver interação — sem problema */ }
+  }
+
+  function registrarMensagem(tipo, dados){
+    const mensagens = readStore(KEY_MENSAGENS);
+    mensagens.unshift({
+      tipo, dados, lida:false,
+      data: new Date().toLocaleString('pt-BR')
+    });
+    writeStore(KEY_MENSAGENS, mensagens);
+    atualizarBadgeAtendimento();
+    tocarBip();
+  }
+
+  function atualizarBadgeAtendimento(){
+    const naoLidas = readStore(KEY_MENSAGENS).filter(m => !m.lida).length;
+    $('atendimento-dot').classList.toggle('show', naoLidas > 0);
+  }
+
+  function renderAtendimento(){
+    const mensagens = readStore(KEY_MENSAGENS);
+    const el = $('admin-atendimento-list');
+    if(mensagens.length === 0){ el.innerHTML = '<p class="empty-state"><p>Nenhuma mensagem recebida ainda.</p></p>'; return; }
+    el.innerHTML = mensagens.map((m,i) => {
+      const linhas = m.tipo === 'contato'
+        ? `E-mail: ${escapeHtml(m.dados.email)}<br>Telefone: ${escapeHtml(m.dados.telefone || '-')}<br>Assunto: ${escapeHtml(m.dados.assunto)}<br>Mensagem: ${escapeHtml(m.dados.mensagem)}`
+        : `Vaga: ${escapeHtml(m.dados.vaga)}<br>Nome: ${escapeHtml(m.dados.nome)}<br>Resumo: ${escapeHtml(m.dados.resumo)}`;
+      return `<div class="list-item" style="align-items:flex-start;flex-direction:column;gap:6px;">
+        <div style="display:flex;justify-content:space-between;width:100%;">
+          <span class="tag" style="margin:0;">${m.tipo === 'contato' ? 'Contato' : 'Candidatura'}</span>
+          <button class="del" data-idx="${i}" data-type="mensagem">Excluir</button>
+        </div>
+        <span class="info" style="font-size:13px;line-height:1.5;">${linhas}<small>${m.data}</small></span>
+      </div>`;
+    }).join('');
+    const mensagensLidas = mensagens.map(m => ({...m, lida:true}));
+    writeStore(KEY_MENSAGENS, mensagensLidas);
+    atualizarBadgeAtendimento();
+  }
+
+  $('btn-atendimento').addEventListener('click', ()=>{
+    openModal('modal-login');
+  });
+  $('btn-atendimento-mobile').addEventListener('click', ()=>{
+    $('mobile-nav').classList.remove('active');
+    openModal('modal-login');
+  });
+
+  /* Menu mobile */
+  $('btn-burger').addEventListener('click', ()=>{
+    const expanded = $('mobile-nav').classList.toggle('active');
+    $('btn-burger').setAttribute('aria-expanded', expanded);
+  });
+  qsa('#mobile-nav a').forEach(a => a.addEventListener('click', ()=> $('mobile-nav').classList.remove('active')));
+
+  /* Parallax leve no hero */
+  const heroBg = $('hero-bg');
+  window.addEventListener('scroll', ()=>{
+    const y = window.scrollY;
+    if(y < window.innerHeight) heroBg.style.transform = `translateY(${y * 0.25}px)`;
+  }, {passive:true});
+
+  /* Vagas — público */
+  function renderVagasPublico(){
+    const vagas = readStore(KEY_VAGAS);
+    const el = $('vagas-list');
+    if(vagas.length === 0){ el.innerHTML = '<div class="empty-state"><p>Nenhuma vaga cadastrada no momento. Volte em breve.</p></div>'; return; }
+    el.innerHTML = vagas.map(v => `
+      <div class="info-card"><div class="info-card-body">
+        <span class="tag">Vaga</span><h3>${escapeHtml(v.cargo)}</h3>
+        <span class="cidade">${escapeHtml(v.cidade)}</span><p>${escapeHtml(v.desc)}</p>
+        <span class="meta">${v.data}</span>
+        <button type="button" class="btn btn-dark btn-candidatura" data-cargo="${escapeHtml(v.cargo)}">Cadastrar-se</button>
+      </div></div>`).join('');
+    qsa('.btn-candidatura').forEach(btn => btn.addEventListener('click', ()=> abrirCadastro(btn.dataset.cargo)));
+  }
+
+  /* Notícias — público */
+  function renderNoticiasPublico(){
+    const noticias = readStore(KEY_NOTICIAS);
+    const el = $('noticias-list');
+    if(noticias.length === 0){ el.innerHTML = '<div class="empty-state"><p>Nenhuma notícia disponível no momento.</p></div>'; return; }
+    el.innerHTML = noticias.map(n => `
+      <div class="info-card"><div class="info-card-body">
+        <span class="tag">Notícia</span><h3>${escapeHtml(n.titulo)}</h3>
+        <p>${escapeHtml(n.texto)}</p><span class="meta">${n.data}</span>
+      </div></div>`).join('');
+  }
+
+  /* Listas do painel admin */
+  function renderAdminLists(){
+    const vagas = readStore(KEY_VAGAS);
+    $('admin-vagas-list').innerHTML = vagas.map((v,i) => `
+      <div class="list-item"><span class="info">${escapeHtml(v.cargo)} — ${escapeHtml(v.cidade)}<small>${v.data}</small></span>
+      <span style="display:flex;gap:8px;flex-shrink:0;">
+        <button class="edit" data-idx="${i}" data-type="vaga" style="color:var(--azul-marinho);font-weight:600;font-size:13px;">Editar</button>
+        <button class="del" data-idx="${i}" data-type="vaga">Excluir</button>
+      </span></div>`).join('') || '<p class="empty-state"><p>Nenhuma vaga cadastrada.</p></p>';
+    const noticias = readStore(KEY_NOTICIAS);
+    $('admin-noticias-list').innerHTML = noticias.map((n,i) => `
+      <div class="list-item"><span class="info">${escapeHtml(n.titulo)}<small>${n.data}</small></span>
+      <span style="display:flex;gap:8px;flex-shrink:0;">
+        <button class="edit" data-idx="${i}" data-type="noticia" style="color:var(--azul-marinho);font-weight:600;font-size:13px;">Editar</button>
+        <button class="del" data-idx="${i}" data-type="noticia">Excluir</button>
+      </span></div>`).join('') || '<p class="empty-state"><p>Nenhuma notícia cadastrada.</p></p>';
+  }
+
+  function renderAll(){ renderVagasPublico(); renderNoticiasPublico(); renderAdminLists(); }
+  renderAll();
+  atualizarBadgeAtendimento();
+  window.addEventListener('storage', (e)=>{
+    if([KEY_VAGAS, KEY_NOTICIAS].includes(e.key)) renderAll();
+    if(e.key === KEY_MENSAGENS) atualizarBadgeAtendimento();
+  });
+
+  /* Modais */
+  qsa('[data-close]').forEach(btn => btn.addEventListener('click', ()=> closeModal(btn.dataset.close)));
+  qsa('.modal-overlay').forEach(ov => ov.addEventListener('click', (e)=>{ if(e.target === ov) ov.classList.remove('active'); }));
+  document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') qsa('.modal-overlay.active').forEach(ov => ov.classList.remove('active')); });
+
+  /* Acesso TI */
+  $('btn-ti-access').addEventListener('click', (e)=>{ e.preventDefault(); openModal('modal-login'); });
+  $('btn-ti-submit').addEventListener('click', ()=>{
+    if($('ti-password').value === SENHA_TI){
+      closeModal('modal-login'); $('ti-password').value = ''; $('ti-error').classList.remove('show');
+      renderAdminLists(); renderAtendimento(); openModal('modal-admin');
+    } else { $('ti-error').classList.add('show'); }
+  });
+  $('ti-password').addEventListener('keydown', (e)=>{ if(e.key === 'Enter') $('btn-ti-submit').click(); });
+  $('btn-admin-logout').addEventListener('click', ()=>{
+    closeModal('modal-admin');
+    editandoVagaIdx = null; editandoNoticiaIdx = null;
+    $('btn-publicar-vaga').textContent = 'Salvar';
+    $('btn-publicar-noticia').textContent = 'Salvar';
+    $('vaga-cargo').value=''; $('vaga-cidade').value=''; $('vaga-desc').value='';
+    $('noticia-titulo').value=''; $('noticia-texto').value='';
+  });
+
+  qsa('.admin-tab').forEach(tab=>{
+    tab.addEventListener('click', ()=>{
+      qsa('.admin-tab').forEach(t=>t.classList.remove('active'));
+      qsa('.admin-tab-content').forEach(c=>c.style.display='none');
+      tab.classList.add('active'); $(tab.dataset.tab).style.display='block';
+      if(tab.dataset.tab === 'tab-atendimento') renderAtendimento();
+    });
+  });
+  function showAdminSuccess(){ const el = $('admin-success'); el.classList.add('show'); setTimeout(()=> el.classList.remove('show'), 2200); }
+
+  /* Edição de vagas e notícias já publicadas */
+  let editandoVagaIdx = null;
+  let editandoNoticiaIdx = null;
+
+  $('btn-publicar-vaga').addEventListener('click', ()=>{
+    const cargo = $('vaga-cargo').value.trim(), cidade = $('vaga-cidade').value.trim(), desc = $('vaga-desc').value.trim();
+    if(!cargo || !cidade || !desc) return;
+    const vagas = readStore(KEY_VAGAS);
+    if(editandoVagaIdx !== null){
+      vagas[editandoVagaIdx] = {...vagas[editandoVagaIdx], cargo, cidade, desc};
+      editandoVagaIdx = null;
+      $('btn-publicar-vaga').textContent = 'Salvar';
+    } else {
+      vagas.unshift({cargo, cidade, desc, data: new Date().toLocaleDateString('pt-BR')});
+    }
+    writeStore(KEY_VAGAS, vagas);
+    $('vaga-cargo').value=''; $('vaga-cidade').value=''; $('vaga-desc').value='';
+    renderAll(); showAdminSuccess();
+  });
+
+  $('btn-publicar-noticia').addEventListener('click', ()=>{
+    const titulo = $('noticia-titulo').value.trim(), texto = $('noticia-texto').value.trim();
+    if(!titulo || !texto) return;
+    const noticias = readStore(KEY_NOTICIAS);
+    if(editandoNoticiaIdx !== null){
+      noticias[editandoNoticiaIdx] = {...noticias[editandoNoticiaIdx], titulo, texto};
+      editandoNoticiaIdx = null;
+      $('btn-publicar-noticia').textContent = 'Salvar';
+    } else {
+      noticias.unshift({titulo, texto, data: new Date().toLocaleDateString('pt-BR')});
+    }
+    writeStore(KEY_NOTICIAS, noticias);
+    $('noticia-titulo').value=''; $('noticia-texto').value='';
+    renderAll(); showAdminSuccess();
+  });
+
+  document.addEventListener('click', (e)=>{
+    if(e.target.classList.contains('edit')){
+      const idx = +e.target.dataset.idx, type = e.target.dataset.type;
+      if(type === 'vaga'){
+        const v = readStore(KEY_VAGAS)[idx];
+        $('vaga-cargo').value = v.cargo; $('vaga-cidade').value = v.cidade; $('vaga-desc').value = v.desc;
+        editandoVagaIdx = idx;
+        $('btn-publicar-vaga').textContent = 'Salvar Alterações';
+        qsa('.admin-tab').forEach(t=>t.classList.remove('active'));
+        qsa('.admin-tab-content').forEach(c=>c.style.display='none');
+        document.querySelector('[data-tab="tab-vagas"]').classList.add('active');
+        $('tab-vagas').style.display = 'block';
+        $('vaga-cargo').scrollIntoView({behavior:'smooth', block:'center'});
+      }
+      if(type === 'noticia'){
+        const n = readStore(KEY_NOTICIAS)[idx];
+        $('noticia-titulo').value = n.titulo; $('noticia-texto').value = n.texto;
+        editandoNoticiaIdx = idx;
+        $('btn-publicar-noticia').textContent = 'Salvar Alterações';
+        qsa('.admin-tab').forEach(t=>t.classList.remove('active'));
+        qsa('.admin-tab-content').forEach(c=>c.style.display='none');
+        document.querySelector('[data-tab="tab-noticias"]').classList.add('active');
+        $('tab-noticias').style.display = 'block';
+        $('noticia-titulo').scrollIntoView({behavior:'smooth', block:'center'});
+      }
+    }
+  });
+
+  document.addEventListener('click', (e)=>{
+    if(e.target.classList.contains('del')){
+      const idx = +e.target.dataset.idx, type = e.target.dataset.type;
+      if(type === 'vaga'){ const d = readStore(KEY_VAGAS); d.splice(idx,1); writeStore(KEY_VAGAS,d); renderAll(); }
+      if(type === 'noticia'){ const d = readStore(KEY_NOTICIAS); d.splice(idx,1); writeStore(KEY_NOTICIAS,d); renderAll(); }
+      if(type === 'mensagem'){ const d = readStore(KEY_MENSAGENS); d.splice(idx,1); writeStore(KEY_MENSAGENS,d); renderAtendimento(); }
+    }
+  });
+
+  /* -----------------------------------------------------------
+     ENVIO 100% VIA WHATSAPP (wa.me) — sem fetch, sem API externa,
+     sem servidor. O JavaScript apenas monta o texto formatado e
+     abre o link oficial da API do WhatsApp com window.open.
+     ----------------------------------------------------------- */
+  // Número de WhatsApp Comercial/RH da Dal Santo para onde as mensagens do site são enviadas.
+  const WHATSAPP_TESTE_NUMERO = "49988926261";
+
+  function abrirWhatsApp(texto){
+    const url = `https://wa.me/${49988926261}?text=${encodeURIComponent(texto)}`;
+    window.open(url, '_blank');
+  }
+
+  /* Formulário de Contratação (vagas) — Nome + Resumo Profissional */
+  function abrirCadastro(vagaTitulo){
+    $('cadastro-success').classList.remove('show'); $('cadastro-error').classList.remove('show');
+    $('form-candidatura').reset();
+    const titulo = vagaTitulo || 'Cadastro geral';
+    $('vaga-selecionada-nome').textContent = titulo;
+    $('cad-vaga').value = titulo;
+    openModal('modal-cadastro');
+  }
+
+  $('form-candidatura').addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const form = e.target;
+    if(!form.checkValidity()){ form.reportValidity(); return; }
+
+    const vaga = $('cad-vaga').value.trim();
+    const nome = $('cad-nome').value.trim();
+    const resumo = $('cad-resumo').value.trim();
+
+    const texto = `💼 *CANDIDATURA PARA VAGA DE EMPREGO*\n`
+      + `• *Vaga Pretendida:* ${vaga}\n`
+      + `• *Nome do Candidato:* ${nome}\n`
+      + `• *Resumo Profissional:* ${resumo}`;
+
+    $('cadastro-error').classList.remove('show');
+    $('cadastro-success').classList.add('show');
+    registrarMensagem('candidatura', {vaga, nome, resumo});
+    abrirWhatsApp(texto);
+    setTimeout(()=> closeModal('modal-cadastro'), 1800);
+  });
+
+  /* Fale Conosco — seleção de assunto preenche o campo automaticamente */
+  qsa('.assunto-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      qsa('.assunto-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      $('contato-assunto').value = btn.dataset.assunto;
+    });
+  });
+
+  $('form-contato').addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const form = e.target;
+    if(!form.checkValidity()){ form.reportValidity(); return; }
+
+    const assunto = $('contato-assunto').value.trim();
+    const emailCliente = $('contato-email').value.trim();
+    const telefone = $('contato-telefone').value.trim();
+    const mensagem = $('contato-mensagem').value.trim();
+
+    const texto = `📢 *NOVO CONTATO VIA PORTAL INSTITUCIONAL*\n`
+      + `• *Assunto:* ${assunto}\n`
+      + `• *E-mail do Cliente:* ${emailCliente}\n`
+      + `• *Telefone/WhatsApp:* ${telefone}\n`
+      + `• *Mensagem enviada:* ${mensagem}`;
+
+    $('contato-error').classList.remove('show');
+    $('contato-success').classList.add('show');
+    registrarMensagem('contato', {email: emailCliente, telefone, assunto, mensagem});
+    abrirWhatsApp(texto);
+    form.reset();
+    qsa('.assunto-btn').forEach(b=>b.classList.remove('active'));
+  });
+
+  /* Checklist do motorista */
+  $('btn-checklist').addEventListener('click', ()=> openModal('modal-checklist'));
+  $('btn-checklist-mobile').addEventListener('click', ()=>{ $('mobile-nav').classList.remove('active'); openModal('modal-checklist'); });
+  const checklistBoxes = () => qsa('#checklist-items input[type="checkbox"]');
+  function updateChecklistBar(){
+    const boxes = checklistBoxes();
+    const checked = [...boxes].filter(b=>b.checked).length;
+    $('checklist-bar').style.width = (checked / boxes.length * 100) + '%';
+  }
+  checklistBoxes().forEach(b => b.addEventListener('change', updateChecklistBar));
+  $('btn-checklist-reset').addEventListener('click', ()=>{ checklistBoxes().forEach(b => b.checked = false); updateChecklistBar(); });
+
+  /* Reveal ao rolar */
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){ entry.target.style.animationPlayState = 'running'; observer.unobserve(entry.target); }
+    });
+  }, {threshold:0.15});
+  qsa('.reveal').forEach(el=>{ el.style.animationPlayState = 'paused'; observer.observe(el); });
+})();
+</script>
+
+</body>
+</html>
