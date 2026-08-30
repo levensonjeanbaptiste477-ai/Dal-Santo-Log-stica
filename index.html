@@ -4,176 +4,858 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dal Santo Logística | Chapecó - SC</title>
-<meta name="description" content="Dal Santo Logística — transporte rodoviário de cargas especiais, produtos perigosos, alimentos e cosméticos. Mais de 35 anos de tradição. Chapecó - SC.">
+<meta name="description" content="Dal Santo Logística — transporte rodoviário de cargas há mais de 35 anos. Cargas especiais, produtos perigosos, perecíveis e cosméticos. Chapecó - SC. No caminho certo.">
 <style>
-/* =========================================================
-   1. RESET & VARIÁVEIS DE DESIGN EXCLUSIVO (VERMELHO E BRANCO CLEAN)
-   ========================================================= */
-:root {
-  --vermelho-principal: #E30613;
-  --vermelho-hover: #C5050F;
-  --vermelho-suave: #FFF1F2;
-  --branco-puro: #FFFFFF;
-  --branco-gelo: #F8F9FA;
-  --cinza-borda: #EBEBEB;
-  --texto-escuro: #2D3142;
-  --texto-suave: #6C757D;
-  --font-display: 'Arial Black', sans-serif;
-  --font-body: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  --radius-lg: 16px;
-  --radius-sm: 8px;
-  --sombra-premium: 0 20px 40px rgba(227, 6, 19, 0.05);
+:root{
+  --vermelho: #E8000F;
+  --vermelho-escuro: #B8000C;
+  --escuro: #1D1D1F;
+  --branco: #FFFFFF;
+  --cinza-claro: #F7F7F8;
+  --cinza-texto: #5B5F66;
+  --cinza-linha: #E7E7E9;
+  --font-display: 'Arial Narrow', 'Segoe UI Semibold', Arial, sans-serif;
+  --font-body: -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --radius: 10px;
+  --sombra: 0 18px 34px -20px rgba(29,29,31,.28);
 }
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { font-family: var(--font-body); color: var(--texto-escuro); background: var(--branco-puro); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-a { color: inherit; text-decoration: none; }
-ul { list-style: none; }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-
-/* =========================================================
-   2. HEADER PREMIUM
-   ========================================================= */
-header { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid var(--vermelho-principal); }
-.nav-wrap { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; }
-.brand { display: flex; align-items: center; gap: 14px; }
-
-/* Logo Redondo Baseado na Seta Oficial */
-.logo-circular {
-  width: 52px; height: 52px; border-radius: 50%;
-  background: var(--vermelho-principal);
-  border: 2px solid var(--branco-puro);
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-  box-shadow: 0 4px 10px rgba(227, 6, 19, 0.2);
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);color:var(--escuro);background:var(--branco);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;}
+ul{list-style:none;}
+:focus-visible{outline:3px solid var(--vermelho);outline-offset:2px;}
+.container{max-width:1200px;margin:0 auto;padding:0 24px;}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+.reveal{animation:fadeInUp .7s ease both;}
+.reveal-delay-1{animation-delay:.1s;}
+.reveal-delay-2{animation-delay:.2s;}
+header{background:var(--branco);position:sticky;top:0;z-index:1000;border-bottom:3px solid var(--vermelho);box-shadow:0 2px 14px rgba(29,29,31,.06);}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;}
+.brand{display:flex;align-items:center;gap:12px;}
+.logo-ds{height:46px;display:flex;align-items:center;flex-shrink:0;}
+.logo-ds img{height:100%;width:auto;object-fit:contain;}
+.brand-name{font-family:var(--font-display);font-weight:700;color:var(--escuro);font-size:18px;letter-spacing:.01em;line-height:1.1;}
+.brand-name small{display:block;font-family:var(--font-body);font-weight:600;font-size:10.5px;color:var(--vermelho);letter-spacing:.1em;text-transform:uppercase;margin-top:2px;}
+nav.main-nav ul{display:flex;gap:26px;}
+nav.main-nav a{color:var(--escuro);font-weight:600;font-size:14px;padding:6px 2px;border-bottom:2px solid transparent;transition:.2s;}
+nav.main-nav a:hover{color:var(--vermelho);border-color:var(--vermelho);}
+.nav-actions{display:flex;align-items:center;gap:14px;}
+.btn{display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;padding:11px 22px;border-radius:99px;transition:.2s;}
+.btn-primary{background:var(--vermelho);color:#fff;box-shadow:0 8px 18px -8px rgba(232,0,15,.55);}
+.btn-primary:hover{background:var(--vermelho-escuro);transform:translateY(-2px);}
+.btn-outline{border:1.5px solid var(--escuro);color:var(--escuro);}
+.btn-outline:hover{border-color:var(--vermelho);color:var(--vermelho);transform:translateY(-2px);}
+.btn-dark{background:var(--escuro);color:#fff;border-radius:6px;}
+.btn-dark:hover{background:#000;transform:translateY(-2px);}
+.btn-checklist{background:var(--escuro);color:#fff;font-weight:700;border-radius:99px;}
+.btn-checklist:hover{background:#000;transform:translateY(-2px) scale(1.02);}
+.btn-bell{position:relative;color:var(--escuro);background:var(--cinza-claro);border:1px solid var(--cinza-linha);width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.btn-bell:hover{border-color:var(--vermelho);}
+.btn-bell .dot{position:absolute;top:2px;right:2px;width:11px;height:11px;border-radius:50%;background:var(--vermelho);display:none;border:2px solid #fff;}
+.btn-bell .dot.show{display:block;animation:pulse-dot 1.6s infinite;}
+@keyframes pulse-dot{0%{box-shadow:0 0 0 0 rgba(232,0,15,.55);}70%{box-shadow:0 0 0 8px rgba(232,0,15,0);}100%{box-shadow:0 0 0 0 rgba(232,0,15,0);}}
+.burger{display:none;color:var(--escuro);font-size:26px;}
+.mobile-nav{display:none;flex-direction:column;gap:2px;background:var(--cinza-claro);padding:12px 24px;border-top:1px solid var(--cinza-linha);}
+.mobile-nav.active{display:flex;}
+.mobile-nav a,.mobile-nav button{color:var(--escuro);padding:10px 0;font-size:15px;text-align:left;font-weight:600;}
+.hero{position:relative;overflow:hidden;background:var(--branco);}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;min-height:78vh;}
+.hero-text{display:flex;flex-direction:column;justify-content:center;padding:70px 60px 70px 0;position:relative;z-index:2;}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--vermelho);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px;}
+.eyebrow::before{content:"";width:30px;height:3px;background:var(--vermelho);border-radius:2px;}
+.hero h1{font-family:var(--font-display);color:var(--escuro);font-weight:700;font-size:clamp(32px,4.4vw,50px);line-height:1.14;letter-spacing:.005em;margin-bottom:20px;}
+.hero h1 em{font-style:normal;color:var(--vermelho);}
+.hero p{color:var(--cinza-texto);font-size:16.5px;max-width:480px;margin-bottom:32px;}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-lg{padding:15px 30px;font-size:15px;}
+.hero-badges{display:flex;gap:26px;margin-top:46px;padding-top:24px;border-top:1px solid var(--cinza-linha);flex-wrap:wrap;}
+.hero-badge{color:var(--cinza-texto);font-size:12.5px;display:flex;flex-direction:column;gap:2px;}
+.hero-badge b{color:var(--escuro);font-family:var(--font-display);font-size:16px;font-weight:700;}
+.hero-photo{position:relative;}
+.hero-photo-clip{position:absolute;inset:0;left:-70px;clip-path:polygon(22% 0,100% 0,100% 100%,0% 100%);background:linear-gradient(200deg, var(--vermelho) 0%, var(--vermelho-escuro) 120%);}
+.hero-photo-img{position:absolute;inset:0;left:0;right:0;clip-path:polygon(28% 0,100% 0,100% 100%,6% 100%);overflow:hidden;}
+.hero-photo-img img{width:100%;height:100%;object-fit:cover;object-position:60% 40%;}
+.hero-logo-card{position:absolute;left:-64px;bottom:56px;z-index:5;background:#fff;border-radius:16px;box-shadow:0 22px 44px -18px rgba(29,29,31,.4);padding:18px 22px;display:flex;align-items:center;}
+.hero-logo-card img{height:46px;width:auto;}
+section{padding:88px 0;}
+.bg-cinza{background:var(--cinza-claro);}
+.section-head{max-width:680px;margin-bottom:48px;}
+.section-eyebrow{display:inline-block;background:var(--vermelho);color:#fff;font-weight:700;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;border-radius:99px;margin-bottom:16px;}
+.section-head h2{font-family:var(--font-display);color:var(--escuro);font-weight:700;font-size:clamp(26px,3.2vw,40px);line-height:1.15;}
+.section-head p{color:var(--cinza-texto);font-size:16px;margin-top:14px;}
+.about-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:56px;align-items:start;}
+.about-num{font-family:var(--font-display);font-weight:700;font-size:120px;line-height:1;color:var(--cinza-claro);-webkit-text-stroke:2px var(--vermelho);position:relative;}
+.about-copy p{color:var(--cinza-texto);font-size:16.5px;margin-bottom:16px;}
+.about-copy p:first-child{color:var(--escuro);font-size:19px;font-weight:600;line-height:1.5;}
+.about-bar{width:56px;height:5px;background:var(--vermelho);border-radius:3px;margin-bottom:22px;}
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+.service-card{background:#fff;border:1px solid var(--cinza-linha);border-radius:var(--radius);padding:30px 24px;transition:.25s;position:relative;overflow:hidden;}
+.service-card:hover{box-shadow:var(--sombra);transform:translateY(-6px);border-color:var(--vermelho);}
+.service-num{font-family:var(--font-display);font-weight:700;font-size:42px;color:var(--cinza-linha);margin-bottom:8px;}
+.service-card h3{font-family:var(--font-display);font-size:16px;font-weight:700;margin-bottom:8px;color:var(--escuro);}
+.service-card p{color:var(--cinza-texto);font-size:13.5px;}
+.service-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--vermelho);transform:scaleY(0);transform-origin:top;transition:.25s;}
+.service-card:hover::before{transform:scaleY(1);}
+.partners-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.partner-card{background:var(--escuro);color:#fff;border-radius:var(--radius);padding:32px;border-top:5px solid var(--vermelho);}
+.partner-card h3{font-family:var(--font-display);font-size:19px;margin-bottom:10px;}
+.partner-card p{color:#c7c8ca;font-size:14.5px;}
+.partner-tag{display:inline-block;color:var(--vermelho);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;}
+.cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.info-card{background:#fff;border:1px solid var(--cinza-linha);border-radius:var(--radius);overflow:hidden;transition:.25s;}
+.info-card:hover{box-shadow:var(--sombra);transform:translateY(-4px);border-color:var(--vermelho);}
+.info-card .tag{display:inline-block;background:var(--vermelho);color:#fff;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 12px;border-radius:99px;margin-bottom:14px;}
+.info-card-body{padding:24px;}
+.info-card h3{font-family:var(--font-display);font-size:17px;margin-bottom:8px;color:var(--escuro);}
+.info-card .cidade{color:var(--vermelho);font-size:12.5px;font-weight:700;margin-bottom:8px;display:block;}
+.info-card p{color:var(--cinza-texto);font-size:14px;margin-bottom:16px;white-space:pre-wrap;}
+.info-card .meta{color:#9a9a9d;font-size:12px;display:block;margin-bottom:14px;}
+.empty-state{grid-column:1/-1;text-align:center;padding:44px 24px;border:1.5px dashed var(--cinza-linha);border-radius:var(--radius);}
+.empty-state p{color:var(--cinza-texto);font-size:14.5px;}
+.contato-box{background:#fff;border:1px solid var(--cinza-linha);border-radius:var(--radius);padding:44px;box-shadow:var(--sombra);}
+.assunto-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0 32px;}
+.assunto-btn{background:var(--cinza-claro);border:1.5px solid var(--cinza-linha);border-radius:99px;padding:14px 12px;font-size:13.5px;font-weight:700;color:var(--escuro);text-align:center;transition:.2s;}
+.assunto-btn:hover{border-color:var(--vermelho);color:var(--vermelho);}
+.assunto-btn.active{background:var(--vermelho);border-color:var(--vermelho);color:#fff;}
+.privacy-note{color:var(--cinza-texto);font-size:13px;font-style:italic;margin-bottom:8px;text-align:center;}
+.privacy-note strong{color:var(--escuro);font-style:normal;}
+.phone-bar{background:var(--vermelho);color:#fff;}
+.phone-bar-inner{display:flex;gap:40px;padding:16px 24px;flex-wrap:wrap;}
+.phone-bar b{display:block;font-family:var(--font-display);font-size:14px;letter-spacing:.03em;}
+.phone-bar span{font-size:13px;color:#ffd7d9;}
+footer{background:var(--escuro);color:#c7c8ca;padding-top:56px;}
+.footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1.2fr;gap:48px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.08);}
+.footer-brand .logo-ds{margin-bottom:14px;}
+.footer-brand .logo-ds img{filter:brightness(0) invert(1);}
+.footer-brand p{color:#9a9a9d;font-size:14px;margin-top:10px;max-width:280px;}
+.social-row{display:flex;gap:10px;margin-top:22px;}
+.social-icon{width:38px;height:38px;border-radius:50%;border:1.5px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;color:#9a9a9d;font-size:13px;cursor:default;}
+footer h5{font-family:var(--font-display);color:#fff;font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;}
+footer ul li{margin-bottom:10px;color:#a3a4a7;font-size:14px;}
+footer ul a{color:#a3a4a7;transition:.2s;}
+footer ul a:hover{color:var(--vermelho);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:22px 0;font-size:12.5px;color:#7a7a7d;flex-wrap:wrap;gap:12px;}
+.footer-bottom .legal{display:flex;gap:22px;flex-wrap:wrap;}
+.footer-bottom a{color:#7a7a7d;}
+.footer-bottom a:hover{color:var(--vermelho);}
+.ti-access{opacity:.5;font-size:12px;}
+.ti-access:hover{opacity:1;}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(29,29,31,.75);z-index:2000;align-items:center;justify-content:center;padding:20px;animation:fadeIn .2s ease;}
+.modal-overlay.active{display:flex;}
+.modal-box{background:#fff;border-radius:var(--radius);max-width:460px;width:100%;padding:36px 32px;position:relative;border-top:5px solid var(--vermelho);max-height:88vh;overflow-y:auto;animation:fadeInUp .25s ease;}
+.modal-box.wide{max-width:760px;}
+.modal-close{position:absolute;top:16px;right:16px;background:var(--cinza-claro);width:32px;height:32px;border-radius:50%;font-size:16px;color:var(--escuro);}
+.modal-box h3{font-family:var(--font-display);font-size:22px;margin-bottom:6px;}
+.modal-box .sub{color:var(--cinza-texto);font-size:14px;margin-bottom:24px;}
+.field{margin-bottom:16px;}
+.field label{display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--escuro);}
+.field input,.field textarea,.field select{width:100%;padding:11px 13px;border:1.5px solid var(--cinza-linha);border-radius:8px;font-family:inherit;font-size:14.5px;}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--vermelho);outline:none;}
+.error-msg{color:var(--vermelho-escuro);font-size:13px;margin-top:8px;display:none;}
+.error-msg.show{display:block;}
+.success-msg{background:#EAF7EC;color:#1e7a34;padding:10px 14px;border-radius:8px;font-size:13.5px;margin-bottom:16px;display:none;}
+.success-msg.show{display:block;}
+.checklist-item{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid var(--cinza-linha);}
+.checklist-item input[type="checkbox"]{width:20px;height:20px;margin-top:2px;accent-color:var(--vermelho);flex-shrink:0;}
+.checklist-item label{font-size:14.5px;color:var(--escuro);}
+.checklist-progress{height:8px;background:var(--cinza-linha);border-radius:99px;margin:18px 0 22px;overflow:hidden;}
+.checklist-progress-bar{height:100%;background:var(--vermelho);width:0%;transition:width .25s;}
+.admin-tabs{display:flex;gap:8px;margin-bottom:24px;border-bottom:2px solid var(--cinza-linha);flex-wrap:wrap;}
+.admin-tab{padding:10px 16px;font-weight:700;font-size:14px;color:var(--cinza-texto);border-bottom:2px solid transparent;margin-bottom:-2px;}
+.admin-tab.active{color:var(--vermelho);border-color:var(--vermelho);}
+.admin-panel-header{background:var(--vermelho);margin:-36px -32px 24px;padding:20px 32px;border-radius:var(--radius) var(--radius) 0 0;display:flex;align-items:center;justify-content:space-between;}
+.admin-panel-header h3{color:#fff;margin:0;}
+.admin-panel-header .logo-ds{height:32px;}
+.admin-panel-header .logo-ds img{filter:brightness(0) invert(1);}
+.list-item{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--cinza-linha);border-radius:8px;margin-bottom:10px;}
+.list-item .del{color:var(--vermelho-escuro);font-weight:700;font-size:13px;flex-shrink:0;}
+.list-item .edit{color:var(--escuro);font-weight:700;font-size:13px;}
+.list-item .info{font-size:13.5px;}
+.list-item .info small{display:block;color:var(--cinza-texto);}
+.vaga-selecionada{background:var(--cinza-claro);border-left:3px solid var(--vermelho);border-radius:6px;padding:10px 14px;font-size:13.5px;margin-bottom:18px;}
+.vaga-selecionada b{color:var(--escuro);}
+.form-note{color:var(--cinza-texto);font-size:11.5px;margin-top:6px;}
+.note-destaque{background:#FDECEC;border:1.5px solid var(--vermelho);border-left:4px solid var(--vermelho);border-radius:8px;padding:12px 14px;color:var(--escuro);font-size:13px;font-weight:600;line-height:1.5;margin:4px 0 18px;}
+@media (max-width:1024px){
+  .services-grid{grid-template-columns:repeat(2,1fr);}
+  .partners-grid{grid-template-columns:repeat(3,1fr);}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .about-grid{grid-template-columns:1fr;}
+  .about-num{font-size:80px;}
 }
-.emblema-d-oficial {
-  background: var(--branco-puro);
-  color: var(--vermelho-principal);
-  width: 32px; height: 32px;
-  border-radius: 6px 14px 14px 6px;
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-display); font-size: 20px; font-weight: bold;
-  padding-left: 2px;
+@media (max-width:960px){
+  nav.main-nav{display:none;}
+  .nav-actions{display:none;}
+  .burger{display:block;}
+  .cards-3{grid-template-columns:1fr;}
+  .partners-grid{grid-template-columns:1fr;}
+  .assunto-grid{grid-template-columns:1fr 1fr;}
+  .phone-bar-inner{gap:20px;}
+  .hero-grid{grid-template-columns:1fr;min-height:auto;}
+  .hero-text{padding:56px 24px 40px;}
+  .hero-photo{height:340px;}
+  .hero-photo-clip{left:0;clip-path:none;background:var(--vermelho);}
+  .hero-photo-img{clip-path:none;}
+  .hero-logo-card{left:24px;bottom:-30px;}
 }
-
-.brand-name { font-family: var(--font-display); font-weight: 900; color: var(--texto-escuro); font-size: 22px; letter-spacing: -0.5px; line-height: 1.1; }
-.brand-name small { display: block; font-family: var(--font-body); font-weight: 700; font-size: 11px; color: var(--vermelho-principal); letter-spacing: .2em; text-transform: uppercase; margin-top: 1px; }
-
-nav.main-nav ul { display: flex; gap: 32px; }
-nav.main-nav a { color: var(--texto-suave); font-weight: 600; font-size: 14px; transition: .2s; }
-nav.main-nav a:hover { color: var(--vermelho-principal); }
-
-/* Botões */
-.btn { display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; padding: 12px 24px; border-radius: var(--radius-sm); transition: .2s; text-transform: uppercase; }
-.btn-primary { background: var(--vermelho-principal); color: var(--branco-puro); border: 2px solid var(--vermelho-principal); }
-.btn-primary:hover { background: var(--vermelho-hover); border-color: var(--vermelho-hover); transform: translateY(-2px); }
-.btn-outline { border: 2px solid var(--vermelho-principal); color: var(--vermelho-principal); background: transparent; }
-.btn-outline:hover { background: var(--vermelho-suave); transform: translateY(-2px); }
-
-/* =========================================================
-   3. BANNER / HERO PREMIUM CONTRASTADO
-   ========================================================= */
-.hero { position: relative; padding: 80px 0; background: var(--branco-gelo); display: flex; align-items: center; overflow: hidden; min-height: 75vh; }
-.hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }
-.hero-content { z-index: 2; }
-.eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--vermelho-principal); font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 18px; }
-.hero h1 { font-family: var(--font-display); color: var(--texto-escuro); font-size: clamp(32px, 4.5vw, 44px); line-height: 1.15; margin-bottom: 20px; }
-.hero h1 em { font-style: normal; color: var(--vermelho-principal); }
-.hero p { color: var(--texto-suave); font-size: 17px; margin-bottom: 34px; max-width: 540px; }
-.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-
-/* Composição Visual do Banner (Caminhão + Logo sobrepostos) */
-.hero-media-composition { position: relative; display: flex; justify-content: center; align-items: center; width: 100%; }
-.frame-caminhao { 
-  width: 100%; max-width: 440px; background: var(--branco-puro); 
-  border-radius: var(--radius-lg); padding: 16px; 
-  box-shadow: var(--sombra-premium); border: 1px solid var(--cinza-borda);
+@media (max-width:680px){.services-grid{grid-template-columns:1fr;}}
+@media (max-width:480px){
+  .contato-box{padding:24px;}
+  .assunto-grid{grid-template-columns:1fr;}
+  section{padding:60px 0;}
+  .footer-grid{grid-template-columns:1fr;}
+  .nav-wrap{padding:10px 16px;}
+  .brand-name{font-size:15px;}
+  .logo-ds{height:38px;}
+  .modal-box{padding:26px 20px;max-height:92vh;}
+  .modal-box.wide{padding:26px 18px;}
+  .admin-panel-header{margin:-26px -18px 20px;padding:16px 18px;}
+  .hero-badges{gap:18px;}
+  .hero-badge{font-size:12px;}
 }
-.frame-caminhao img { width: 100%; border-radius: calc(var(--radius-lg) - 4px); object-fit: cover; }
-
-/* Emblema Flutuante Redondo com o Logotipo Oficial */
-.badge-logo-overlay {
-  position: absolute; top: -20px; left: -20px;
-  width: 130px; height: 130px; background: var(--branco-puro);
-  border-radius: 50%; box-shadow: 0 12px 36px rgba(227, 6, 19, 0.15);
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  border: 4px solid var(--vermelho-principal); padding: 10px;
-}
-.badge-logo-overlay img { width: 85%; height: auto; object-fit: contain; }
-
-/* =========================================================
-   4. SEÇÕES REESTRUTURADAS (FUNDO CLARO)
-   ========================================================= */
-section { padding: 90px 0; }
-.bg-suave { background: var(--branco-gelo); }
-.section-head { max-width: 680px; margin-bottom: 50px; }
-.section-eyebrow { color: var(--vermelho-principal); font-weight: 700; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 12px; display: block; }
-.section-head h2 { font-family: var(--font-display); color: var(--texto-escuro); font-size: clamp(26px, 3.2vw, 36px); line-height: 1.15; letter-spacing: -0.5px; }
-
-/* Caixa Sobre com fundo claro e detalhes em vermelho */
-.about-box-clean { background: var(--branco-puro); border: 1px solid var(--cinza-borda); border-top: 6px solid var(--vermelho-principal); border-radius: var(--radius-lg); padding: 50px; box-shadow: var(--sombra-premium); }
-.about-box-clean p { color: var(--texto-suave); font-size: 16.5px; margin-bottom: 16px; }
-
-/* Grid de Serviços Minimalista */
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-top: 32px; }
-.service-card-clean { background: var(--branco-puro); padding: 32px; border-radius: var(--radius-sm); border: 1px solid var(--cinza-borda); transition: 0.3s; }
-.service-card-clean:hover { transform: translateY(-5px); border-color: var(--vermelho-principal); box-shadow: var(--sombra-premium); }
-.service-card-clean h3 { font-family: var(--font-body); font-weight: 700; color: var(--texto-escuro); margin-bottom: 12px; font-size: 18px; }
-.service-card-clean p { color: var(--texto-suave); font-size: 14.5px; }
-
-/* =========================================================
-   5. CONTATO E RODAPÉ CLEAN VERMELHO E BRANCO
-   ========================================================= */
-.footer-clean { background: var(--branco-puro); color: var(--texto-escuro); padding: 80px 0 30px 0; font-size: 14px; border-top: 4px solid var(--vermelho-principal); }
-.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-bottom: 40px; }
-.footer-col h4 { color: var(--vermelho-principal); font-size: 16px; margin-bottom: 18px; text-transform: uppercase; letter-spacing: 1px; font-family: var(--font-display); }
-.footer-col p { color: var(--texto-suave); margin-bottom: 10px; }
-.footer-col a { color: var(--vermelho-principal); font-weight: bold; }
-.footer-bottom { border-top: 1px solid var(--cinza-borda); padding-top: 30px; text-align: center; color: var(--texto-suave); font-size: 12px; }
-
-@media (max-width: 992px) {
-  .hero-grid { grid-template-columns: 1fr; gap: 60px; text-align: center; }
-  .hero-content { max-width: 100%; }
-  .hero-actions { justify-content: center; }
-  .hero-media-composition { margin-top: 20px; }
-  .badge-logo-overlay { top: -30px; left: 10px; width: 110px; height: 110px; }
-  nav.main-nav { display: none; }
-}
+@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important;scroll-behavior:auto !important;}}
 </style>
 </head>
 <body>
 
-  <!-- CABEÇALHO -->
-  <header>
-    <div class="nav-wrap container">
-      <div class="brand">
-        <!-- Ícone Redondo com o caractere "D" e a Seta embutida -->
-        <div class="logo-circular">
-          <div class="emblema-d-oficial">➔</div>
-        </div>
-        <div class="brand-name">
-          DAL SANTO
-          <small>Logística</small>
-        </div>
+<header>
+  <div class="nav-wrap container">
+    <div class="brand">
+      <div class="logo-ds" aria-hidden="true"><img src="dalsanto-logo.png" alt="Dal Santo Logística"></div>
+    </div>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#empresa">Empresa</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#vagas">Vagas</a></li>
+        <li><a href="#noticias">Notícias</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <button class="btn-bell" id="btn-atendimento" title="Painel de Atendimento" aria-label="Painel de Atendimento">🔔<span class="dot" id="atendimento-dot"></span></button>
+      <button class="btn btn-checklist" id="btn-checklist">Checklist</button>
+    </div>
+    <button class="burger" id="btn-burger" aria-label="Abrir menu" aria-expanded="false">☰</button>
+  </div>
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="#inicio">Início</a>
+    <a href="#empresa">Empresa</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#vagas">Vagas</a>
+    <a href="#noticias">Notícias</a>
+    <a href="#contato">Contato</a>
+    <button id="btn-checklist-mobile">Checklist</button>
+    <button id="btn-atendimento-mobile">🔔 Painel de Atendimento</button>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="hero-grid">
+    <div class="hero-text reveal">
+      <span class="eyebrow">No caminho certo.</span>
+      <h1>Conectando destinos com <em>segurança</em> e compromisso</h1>
+      <p>Mais que transportar, nós fortalecemos negócios por todo o Brasil com soluções logísticas sob medida.</p>
+      <div class="hero-actions">
+        <a href="#contato" class="btn btn-primary btn-lg">Solicitar Cotação</a>
+        <a href="#empresa" class="btn btn-outline btn-lg">Conheça a Empresa</a>
       </div>
-      <nav class="main-nav">
-        <ul>
-          <li><a href="#inicio">Início</a></li>
-          <li><a href="#sobre">Empresa</a></li>
-          <li><a href="#servicos">Serviços</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-      </nav>
-      <div class="nav-actions">
-        <a href="https://wa.me" target="_blank" class="btn btn-primary">WhatsApp</a>
+      <div class="hero-badges">
+        <div class="hero-badge"><b>+35 anos</b> de história e tradição</div>
+        <div class="hero-badge"><b>SC · SP · PR</b> regiões atendidas</div>
+        <div class="hero-badge"><b>DAF · Mercedes-Benz</b> frota de última geração</div>
       </div>
     </div>
-  </header>
+    <div class="hero-photo">
+      <div class="hero-photo-clip"></div>
+      <div class="hero-photo-img"><img src="dalsanto-caminhao.jpg" alt="Caminhão Mercedes-Benz da frota Dal Santo Logística"></div>
+      <div class="hero-logo-card"><img src="dalsanto-logo.png" alt="Dal Santo Logística"></div>
+    </div>
+  </div>
+</section>
 
-  <!-- SEÇÃO HERO / BANNER PRINCIPAL -->
-  <section id="inicio" class="hero">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <span class="eyebrow">Soluções Rodoviárias</span>
-        <h1>Conectando destinos com <em>segurança</em> e compromisso.</h1>
+<section id="empresa">
+  <div class="container">
+    <div class="about-grid">
+      <div class="reveal">
+        <span class="section-eyebrow">Quem Somos</span>
+        <div class="about-num">35+</div>
+        <p style="color:var(--cinza-texto);font-size:14px;">anos de história e tradição na estrada</p>
+      </div>
+      <div class="about-copy reveal reveal-delay-1">
+        <div class="about-bar"></div>
+        <p>Com mais de 35 anos de história e tradição na estrada, a Dal Santo Logística consolidou-se no mercado como sinônimo de eficiência e qualidade no transporte rodoviário de cargas.</p>
+        <p>Com sede estratégica em Chapecó (SC), nossa empresa evoluiu acompanhando as necessidades do mercado, mantendo sempre o compromisso original: cuidar de cada entrega como se fosse nossa.</p>
+        <p>Atuamos com responsabilidade e transparência, contando com profissionais altamente treinados e uma frota moderna, garantindo que o seu produto chegue ao destino com a máxima segurança.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-cinza" id="servicos">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Nossos Serviços</span>
+      <h2>Especialidades</h2>
+      <p>Soluções logísticas sob medida para diferentes perfis de carga.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-num">01</div>
+        <h3>Cargas Especiais e Lotação</h3>
+        <p>Atendimento especializado para demandas complexas e grandes volumes de mercadorias.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-num">02</div>
+        <h3>Produtos Perigosos e Químicos</h3>
+        <p>Transporte rigorosamente adequado às normas e certificações de segurança exigidas por lei.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-num">03</div>
+        <h3>Alimentos e Perecíveis</h3>
+        <p>Logística precisa para o segmento alimentício, garantindo integridade e conservação dos produtos.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">04</div>
+        <h3>Cosméticos e Higiene</h3>
+        <p>Distribuição ágil e cuidadosa para o setor de cuidados pessoais e cosméticos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="diferenciais">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Por que a Dal Santo</span>
+      <h2>Diferenciais da empresa</h2>
+    </div>
+    <div class="partners-grid">
+      <div class="partner-card reveal">
+        <span class="partner-tag">Frota</span>
+        <h3>Frota de Última Geração</h3>
+        <p>Caminhões modernos (marcas referência como DAF e Mercedes-Benz) com manutenção preventiva rigorosa.</p>
+      </div>
+      <div class="partner-card reveal reveal-delay-1">
+        <span class="partner-tag">Segurança</span>
+        <h3>Segurança Máxima</h3>
+        <p>Monitoramento constante, motoristas altamente capacitados e total conformidade com as leis de trânsito.</p>
+      </div>
+      <div class="partner-card reveal reveal-delay-2">
+        <span class="partner-tag">Cobertura</span>
+        <h3>Abrangência</h3>
+        <p>Atendimento focado nas principais rotas e conexões das regiões Sul, Sudeste e Centro-Oeste do país.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-cinza" id="vagas">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Recursos Humanos</span>
+      <h2>Trabalhe Conosco</h2>
+      <p>Oportunidades publicadas pela equipe da Dal Santo Logística.</p>
+    </div>
+    <div class="cards-3" id="vagas-list"></div>
+  </div>
+</section>
+
+<section id="noticias">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Fique por dentro</span>
+      <h2>Notícias e Comunicados</h2>
+      <p>Atualizações publicadas pela Dal Santo Logística.</p>
+    </div>
+    <div class="cards-3" id="noticias-list"></div>
+  </div>
+</section>
+
+<section class="bg-cinza" id="contato">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Contato</span>
+      <h2>Fale Conosco</h2>
+      <p>Selecione o assunto do seu contato e envie sua mensagem diretamente para a nossa equipe.</p>
+    </div>
+    <form class="contato-box reveal" id="form-contato">
+      <p class="privacy-note">A Dal Santo Logística utilizará seus dados pessoais apenas para receber e dar seguimento ao seu contato.</p>
+      <p class="success-msg" id="contato-success">Mensagem enviada com sucesso! Em breve entraremos em contato.</p>
+      <div class="assunto-grid" id="assunto-grid">
+        <button type="button" class="assunto-btn" data-assunto="Cotação de Frete">Cotação de Frete</button>
+        <button type="button" class="assunto-btn" data-assunto="Cargas Especiais e Lotação">Cargas Especiais e Lotação</button>
+        <button type="button" class="assunto-btn" data-assunto="Produtos Perigosos e Químicos">Produtos Perigosos e Químicos</button>
+        <button type="button" class="assunto-btn" data-assunto="Trabalhe Conosco">Trabalhe Conosco</button>
+        <button type="button" class="assunto-btn" data-assunto="Seja um Fornecedor">Seja um Fornecedor</button>
+        <button type="button" class="assunto-btn" data-assunto="Outros">Outros</button>
+      </div>
+      <div class="field">
+        <label for="contato-email">E-mail</label>
+        <input type="email" name="email" id="contato-email" placeholder="seu@email.com" required>
+      </div>
+      <div class="field">
+        <label for="contato-telefone">Telefone (de preferência WhatsApp)</label>
+        <input type="tel" name="telefone" id="contato-telefone" placeholder="(49) 90000-0000" required>
+      </div>
+      <div class="field">
+        <label for="contato-assunto">Assunto selecionado</label>
+        <input type="text" name="assunto" id="contato-assunto" placeholder="Selecione uma opção acima" readonly required>
+      </div>
+      <div class="field">
+        <label for="contato-mensagem">Mensagem</label>
+        <textarea name="mensagem" id="contato-mensagem" rows="4" placeholder="Escreva sua mensagem" required></textarea>
+      </div>
+      <p class="error-msg" id="contato-error">Preencha e-mail, assunto e mensagem.</p>
+      <button type="submit" class="btn btn-primary btn-lg" id="btn-contato-enviar">Enviar Mensagem</button>
+      <p class="form-note" style="text-align:center;margin-top:12px;">💡 Nota: caso precise enviar algum documento ou anexo, você poderá anexá-lo diretamente pelo WhatsApp após o envio desta mensagem.</p>
+    </form>
+  </div>
+</section>
+
+<div class="phone-bar">
+  <div class="container phone-bar-inner">
+    <div><b>Telefone Comercial</b><span>(49) 3329-8314</span></div>
+    <div><b>WhatsApp Comercial / RH</b><span>(49) 9 8892-6261</span></div>
+    <div><b>Cotações</b><span>logistica@dalsantologistica.com.br</span></div>
+  </div>
+</div>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-ds" aria-hidden="true"><img src="dalsanto-logo.png" alt="Dal Santo Logística"></div>
+        <p>Transporte rodoviário de cargas. No caminho certo.</p>
+        <div class="social-row">
+          <span class="social-icon" title="Instagram — link não informado" aria-label="Instagram, link não disponível"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></span>
+          <span class="social-icon" title="Facebook — link não informado" aria-label="Facebook, link não disponível"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none"><path d="M15 4h-2a4 4 0 0 0-4 4v3H7v4h2v7h4v-7h3l1-4h-4V8a1 1 0 0 1 1-1h3z"/></svg></span>
+          <span class="social-icon" title="LinkedIn — link não informado" aria-label="LinkedIn, link não disponível"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 13v4"/></svg></span>
+        </div>
+      </div>
+      <div>
+        <h5>Navegação</h5>
+        <ul>
+          <li><a href="#empresa">Empresa</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#vagas">Vagas</a></li>
+          <li><a href="#noticias">Notícias</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contato</h5>
+        <ul>
+          <li>Rua Inês Battiston, 125-E</li>
+          <li>Bairro Efapi</li>
+          <li>Chapecó — SC, CEP 89810-414</li>
+          <li style="margin-top:10px;">rh@dalsantologistica.com.br</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Dal Santo Transportes Ltda · © 2026 Todos os direitos reservados.</span>
+      <div class="legal"><a href="#" class="ti-access" id="btn-ti-access">Acesso TI</a></div>
+    </div>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="modal-login">
+  <div class="modal-box">
+    <button class="modal-close" data-close="modal-login" aria-label="Fechar">✕</button>
+    <div class="logo-ds" style="margin-bottom:18px;height:40px;" aria-hidden="true"><img src="dalsanto-logo.png" alt="Dal Santo Logística"></div>
+    <h3>Acesso Restrito — TI</h3>
+    <p class="sub">Painel administrativo interno. Uso exclusivo da equipe autorizada.</p>
+    <div class="field"><label for="ti-password">Senha de acesso</label><input type="password" id="ti-password" placeholder="••••••••"></div>
+    <p class="error-msg" id="ti-error">Senha incorreta. Tente novamente.</p>
+    <button class="btn btn-primary btn-lg" style="width:100%;margin-top:8px;" id="btn-ti-submit">Entrar</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-admin">
+  <div class="modal-box wide">
+    <button class="modal-close" data-close="modal-admin" aria-label="Fechar">✕</button>
+    <div class="admin-panel-header">
+      <div class="brand" style="gap:12px;">
+        <div class="logo-ds" aria-hidden="true"><img src="dalsanto-logo.png" alt="Dal Santo Logística"></div>
+        <h3>Painel Administrativo</h3>
+      </div>
+      <button class="btn btn-primary" id="btn-admin-logout" style="padding:8px 16px;font-size:13px;">Sair</button>
+    </div>
+    <div class="admin-tabs">
+      <button class="admin-tab active" data-tab="tab-atendimento">Atendimento</button>
+      <button class="admin-tab" data-tab="tab-vagas">Cadastrar Vaga</button>
+      <button class="admin-tab" data-tab="tab-noticias">Cadastrar Notícia</button>
+    </div>
+    <p class="success-msg" id="admin-success">Publicado com sucesso.</p>
+    <div class="admin-tab-content" id="tab-atendimento">
+      <p class="sub" style="margin-bottom:16px;">Mensagens recebidas pelo formulário de contato e pelas candidaturas de vagas (armazenadas neste navegador).</p>
+      <div id="admin-atendimento-list"></div>
+    </div>
+    <div class="admin-tab-content" id="tab-vagas" style="display:none;">
+      <div class="field"><label for="vaga-cargo">Cargo</label><input type="text" id="vaga-cargo" placeholder="Ex: Motorista Categoria E"></div>
+      <div class="field"><label for="vaga-cidade">Cidade</label><input type="text" id="vaga-cidade" placeholder="Ex: Chapecó - SC"></div>
+      <div class="field"><label for="vaga-desc">Descrição</label><textarea id="vaga-desc" rows="3" placeholder="Requisitos e responsabilidades da vaga"></textarea></div>
+      <button class="btn btn-primary" id="btn-publicar-vaga">Salvar</button>
+      <div style="margin-top:22px;" id="admin-vagas-list"></div>
+    </div>
+    <div class="admin-tab-content" id="tab-noticias" style="display:none;">
+      <div class="field"><label for="noticia-titulo">Título</label><input type="text" id="noticia-titulo" placeholder="Ex: Dal Santo Logística comunica..."></div>
+      <div class="field"><label for="noticia-texto">Texto</label><textarea id="noticia-texto" rows="4" placeholder="Conteúdo da notícia"></textarea></div>
+      <button class="btn btn-primary" id="btn-publicar-noticia">Salvar</button>
+      <div style="margin-top:22px;" id="admin-noticias-list"></div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-cadastro">
+  <div class="modal-box">
+    <button class="modal-close" data-close="modal-cadastro" aria-label="Fechar">✕</button>
+    <h3>Cadastrar-se</h3>
+    <p class="sub">Preencha seus dados. Você será direcionado ao WhatsApp da Dal Santo Logística.</p>
+    <p class="success-msg" id="cadastro-success">Inscrição enviada com sucesso!</p>
+    <div class="vaga-selecionada" id="vaga-selecionada-box">Vaga: <b id="vaga-selecionada-nome">Cadastro geral</b></div>
+    <form id="form-candidatura">
+      <input type="hidden" name="vaga" id="cad-vaga">
+      <div class="field"><label for="cad-nome">Nome Completo</label><input type="text" name="nome" id="cad-nome" placeholder="Seu nome completo" required></div>
+      <div class="field"><label for="cad-resumo">Resumo Profissional / Sobre Você</label><textarea name="resumo" id="cad-resumo" rows="5" placeholder="Conte um pouco da sua experiência profissional" required></textarea></div>
+      <p class="note-destaque">💡 Nota: O texto do seu currículo será enviado na mensagem a seguir. Se desejar enviar seu PDF completo, anexe-o diretamente usando o clipe de arquivos do seu WhatsApp.</p>
+      <p class="error-msg" id="cadastro-error">Preencha nome completo e resumo profissional.</p>
+      <button type="submit" class="btn btn-primary btn-lg" style="width:100%;margin-top:8px;" id="btn-cadastro-submit">Enviar Inscrição</button>
+    </form>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-checklist">
+  <div class="modal-box">
+    <button class="modal-close" data-close="modal-checklist" aria-label="Fechar">✕</button>
+    <h3>Checklist do Motorista</h3>
+    <p class="sub">Verificação de pré-viagem do veículo.</p>
+    <div class="checklist-progress"><div class="checklist-progress-bar" id="checklist-bar"></div></div>
+    <div id="checklist-items">
+      <div class="checklist-item"><input type="checkbox" id="chk1"><label for="chk1">Nível de óleo e água verificados</label></div>
+      <div class="checklist-item"><input type="checkbox" id="chk2"><label for="chk2">Pneus e estepe calibrados</label></div>
+      <div class="checklist-item"><input type="checkbox" id="chk3"><label for="chk3">Freios testados</label></div>
+      <div class="checklist-item"><input type="checkbox" id="chk4"><label for="chk4">Luzes e setas funcionando</label></div>
+      <div class="checklist-item"><input type="checkbox" id="chk5"><label for="chk5">Documentos do veículo e da carga conferidos</label></div>
+      <div class="checklist-item"><input type="checkbox" id="chk6"><label for="chk6">Cintos e equipamentos de segurança verificados</label></div>
+    </div>
+    <button class="btn btn-primary btn-lg" style="width:100%;margin-top:18px;" id="btn-checklist-reset">Reiniciar Checklist</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  const SENHA_TI = "dalsanto123";
+  const $  = (id) => document.getElementById(id);
+  const qsa = (sel) => document.querySelectorAll(sel);
+  const openModal  = (id) => $(id).classList.add('active');
+  const closeModal = (id) => $(id).classList.remove('active');
+  const KEY_VAGAS = 'ds_vagas';
+  const KEY_NOTICIAS = 'ds_noticias';
+  const KEY_MENSAGENS = 'ds_mensagens';
+  const readStore  = (key) => JSON.parse(localStorage.getItem(key) || '[]');
+  const writeStore = (key, data) => localStorage.setItem(key, JSON.stringify(data));
+  function escapeHtml(str){ const d = document.createElement('div'); d.textContent = str; return d.innerHTML; }
+
+  function tocarBip(){
+    try{
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'sine';
+      osc.frequency.value = 880;
+      gain.gain.setValueAtTime(0.15, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.35);
+      osc.connect(gain); gain.connect(ctx.destination);
+      osc.start(); osc.stop(ctx.currentTime + 0.35);
+    }catch(e){}
+  }
+
+  function registrarMensagem(tipo, dados){
+    const mensagens = readStore(KEY_MENSAGENS);
+    mensagens.unshift({ tipo, dados, lida:false, data: new Date().toLocaleString('pt-BR') });
+    writeStore(KEY_MENSAGENS, mensagens);
+    atualizarBadgeAtendimento();
+    tocarBip();
+  }
+
+  function atualizarBadgeAtendimento(){
+    const naoLidas = readStore(KEY_MENSAGENS).filter(m => !m.lida).length;
+    $('atendimento-dot').classList.toggle('show', naoLidas > 0);
+  }
+
+  function renderAtendimento(){
+    const mensagens = readStore(KEY_MENSAGENS);
+    const el = $('admin-atendimento-list');
+    if(mensagens.length === 0){ el.innerHTML = '<p class="empty-state"><p>Nenhuma mensagem recebida ainda.</p></p>'; return; }
+    el.innerHTML = mensagens.map((m,i) => {
+      const linhas = m.tipo === 'contato'
+        ? `E-mail: ${escapeHtml(m.dados.email)}<br>Telefone: ${escapeHtml(m.dados.telefone || '-')}<br>Assunto: ${escapeHtml(m.dados.assunto)}<br>Mensagem: ${escapeHtml(m.dados.mensagem)}`
+        : `Vaga: ${escapeHtml(m.dados.vaga)}<br>Nome: ${escapeHtml(m.dados.nome)}<br>Resumo: ${escapeHtml(m.dados.resumo)}`;
+      return `<div class="list-item" style="align-items:flex-start;flex-direction:column;gap:6px;">
+        <div style="display:flex;justify-content:space-between;width:100%;">
+          <span class="tag" style="margin:0;">${m.tipo === 'contato' ? 'Contato' : 'Candidatura'}</span>
+          <button class="del" data-idx="${i}" data-type="mensagem">Excluir</button>
+        </div>
+        <span class="info" style="font-size:13px;line-height:1.5;">${linhas}<small>${m.data}</small></span>
+      </div>`;
+    }).join('');
+    const mensagensLidas = mensagens.map(m => ({...m, lida:true}));
+    writeStore(KEY_MENSAGENS, mensagensLidas);
+    atualizarBadgeAtendimento();
+  }
+
+  $('btn-atendimento').addEventListener('click', ()=>{ openModal('modal-login'); });
+  $('btn-atendimento-mobile').addEventListener('click', ()=>{ $('mobile-nav').classList.remove('active'); openModal('modal-login'); });
+
+  $('btn-burger').addEventListener('click', ()=>{
+    const expanded = $('mobile-nav').classList.toggle('active');
+    $('btn-burger').setAttribute('aria-expanded', expanded);
+  });
+  qsa('#mobile-nav a').forEach(a => a.addEventListener('click', ()=> $('mobile-nav').classList.remove('active')));
+
+  function renderVagasPublico(){
+    const vagas = readStore(KEY_VAGAS);
+    const el = $('vagas-list');
+    if(vagas.length === 0){ el.innerHTML = '<div class="empty-state"><p>Nenhuma vaga cadastrada no momento. Volte em breve.</p></div>'; return; }
+    el.innerHTML = vagas.map(v => `
+      <div class="info-card"><div class="info-card-body">
+        <span class="tag">Vaga</span><h3>${escapeHtml(v.cargo)}</h3>
+        <span class="cidade">${escapeHtml(v.cidade)}</span><p>${escapeHtml(v.desc)}</p>
+        <span class="meta">${v.data}</span>
+        <button type="button" class="btn btn-dark btn-candidatura" data-cargo="${escapeHtml(v.cargo)}">Cadastrar-se</button>
+      </div></div>`).join('');
+    qsa('.btn-candidatura').forEach(btn => btn.addEventListener('click', ()=> abrirCadastro(btn.dataset.cargo)));
+  }
+
+  function renderNoticiasPublico(){
+    const noticias = readStore(KEY_NOTICIAS);
+    const el = $('noticias-list');
+    if(noticias.length === 0){ el.innerHTML = '<div class="empty-state"><p>Nenhuma notícia disponível no momento.</p></div>'; return; }
+    el.innerHTML = noticias.map(n => `
+      <div class="info-card"><div class="info-card-body">
+        <span class="tag">Notícia</span><h3>${escapeHtml(n.titulo)}</h3>
+        <p>${escapeHtml(n.texto)}</p><span class="meta">${n.data}</span>
+      </div></div>`).join('');
+  }
+
+  function renderAdminLists(){
+    const vagas = readStore(KEY_VAGAS);
+    $('admin-vagas-list').innerHTML = vagas.map((v,i) => `
+      <div class="list-item"><span class="info">${escapeHtml(v.cargo)} — ${escapeHtml(v.cidade)}<small>${v.data}</small></span>
+      <span style="display:flex;gap:8px;flex-shrink:0;">
+        <button class="edit" data-idx="${i}" data-type="vaga">Editar</button>
+        <button class="del" data-idx="${i}" data-type="vaga">Excluir</button>
+      </span></div>`).join('') || '<p class="empty-state"><p>Nenhuma vaga cadastrada.</p></p>';
+    const noticias = readStore(KEY_NOTICIAS);
+    $('admin-noticias-list').innerHTML = noticias.map((n,i) => `
+      <div class="list-item"><span class="info">${escapeHtml(n.titulo)}<small>${n.data}</small></span>
+      <span style="display:flex;gap:8px;flex-shrink:0;">
+        <button class="edit" data-idx="${i}" data-type="noticia">Editar</button>
+        <button class="del" data-idx="${i}" data-type="noticia">Excluir</button>
+      </span></div>`).join('') || '<p class="empty-state"><p>Nenhuma notícia cadastrada.</p></p>';
+  }
+
+  function renderAll(){ renderVagasPublico(); renderNoticiasPublico(); renderAdminLists(); }
+  renderAll();
+  atualizarBadgeAtendimento();
+  window.addEventListener('storage', (e)=>{
+    if([KEY_VAGAS, KEY_NOTICIAS].includes(e.key)) renderAll();
+    if(e.key === KEY_MENSAGENS) atualizarBadgeAtendimento();
+  });
+
+  qsa('[data-close]').forEach(btn => btn.addEventListener('click', ()=> closeModal(btn.dataset.close)));
+  qsa('.modal-overlay').forEach(ov => ov.addEventListener('click', (e)=>{ if(e.target === ov) ov.classList.remove('active'); }));
+  document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') qsa('.modal-overlay.active').forEach(ov => ov.classList.remove('active')); });
+
+  $('btn-ti-access').addEventListener('click', (e)=>{ e.preventDefault(); openModal('modal-login'); });
+  $('btn-ti-submit').addEventListener('click', ()=>{
+    if($('ti-password').value === SENHA_TI){
+      closeModal('modal-login'); $('ti-password').value = ''; $('ti-error').classList.remove('show');
+      renderAdminLists(); renderAtendimento(); openModal('modal-admin');
+    } else { $('ti-error').classList.add('show'); }
+  });
+  $('ti-password').addEventListener('keydown', (e)=>{ if(e.key === 'Enter') $('btn-ti-submit').click(); });
+  $('btn-admin-logout').addEventListener('click', ()=>{
+    closeModal('modal-admin');
+    editandoVagaIdx = null; editandoNoticiaIdx = null;
+    $('btn-publicar-vaga').textContent = 'Salvar';
+    $('btn-publicar-noticia').textContent = 'Salvar';
+    $('vaga-cargo').value=''; $('vaga-cidade').value=''; $('vaga-desc').value='';
+    $('noticia-titulo').value=''; $('noticia-texto').value='';
+  });
+
+  qsa('.admin-tab').forEach(tab=>{
+    tab.addEventListener('click', ()=>{
+      qsa('.admin-tab').forEach(t=>t.classList.remove('active'));
+      qsa('.admin-tab-content').forEach(c=>c.style.display='none');
+      tab.classList.add('active'); $(tab.dataset.tab).style.display='block';
+      if(tab.dataset.tab === 'tab-atendimento') renderAtendimento();
+    });
+  });
+  function showAdminSuccess(){ const el = $('admin-success'); el.classList.add('show'); setTimeout(()=> el.classList.remove('show'), 2200); }
+
+  let editandoVagaIdx = null;
+  let editandoNoticiaIdx = null;
+
+  $('btn-publicar-vaga').addEventListener('click', ()=>{
+    const cargo = $('vaga-cargo').value.trim(), cidade = $('vaga-cidade').value.trim(), desc = $('vaga-desc').value.trim();
+    if(!cargo || !cidade || !desc) return;
+    const vagas = readStore(KEY_VAGAS);
+    if(editandoVagaIdx !== null){
+      vagas[editandoVagaIdx] = {...vagas[editandoVagaIdx], cargo, cidade, desc};
+      editandoVagaIdx = null;
+      $('btn-publicar-vaga').textContent = 'Salvar';
+    } else {
+      vagas.unshift({cargo, cidade, desc, data: new Date().toLocaleDateString('pt-BR')});
+    }
+    writeStore(KEY_VAGAS, vagas);
+    $('vaga-cargo').value=''; $('vaga-cidade').value=''; $('vaga-desc').value='';
+    renderAll(); showAdminSuccess();
+  });
+
+  $('btn-publicar-noticia').addEventListener('click', ()=>{
+    const titulo = $('noticia-titulo').value.trim(), texto = $('noticia-texto').value.trim();
+    if(!titulo || !texto) return;
+    const noticias = readStore(KEY_NOTICIAS);
+    if(editandoNoticiaIdx !== null){
+      noticias[editandoNoticiaIdx] = {...noticias[editandoNoticiaIdx], titulo, texto};
+      editandoNoticiaIdx = null;
+      $('btn-publicar-noticia').textContent = 'Salvar';
+    } else {
+      noticias.unshift({titulo, texto, data: new Date().toLocaleDateString('pt-BR')});
+    }
+    writeStore(KEY_NOTICIAS, noticias);
+    $('noticia-titulo').value=''; $('noticia-texto').value='';
+    renderAll(); showAdminSuccess();
+  });
+
+  document.addEventListener('click', (e)=>{
+    if(e.target.classList.contains('edit')){
+      const idx = +e.target.dataset.idx, type = e.target.dataset.type;
+      if(type === 'vaga'){
+        const v = readStore(KEY_VAGAS)[idx];
+        $('vaga-cargo').value = v.cargo; $('vaga-cidade').value = v.cidade; $('vaga-desc').value = v.desc;
+        editandoVagaIdx = idx;
+        $('btn-publicar-vaga').textContent = 'Salvar Alterações';
+        qsa('.admin-tab').forEach(t=>t.classList.remove('active'));
+        qsa('.admin-tab-content').forEach(c=>c.style.display='none');
+        document.querySelector('[data-tab="tab-vagas"]').classList.add('active');
+        $('tab-vagas').style.display = 'block';
+        $('vaga-cargo').scrollIntoView({behavior:'smooth', block:'center'});
+      }
+      if(type === 'noticia'){
+        const n = readStore(KEY_NOTICIAS)[idx];
+        $('noticia-titulo').value = n.titulo; $('noticia-texto').value = n.texto;
+        editandoNoticiaIdx = idx;
+        $('btn-publicar-noticia').textContent = 'Salvar Alterações';
+        qsa('.admin-tab').forEach(t=>t.classList.remove('active'));
+        qsa('.admin-tab-content').forEach(c=>c.style.display='none');
+        document.querySelector('[data-tab="tab-noticias"]').classList.add('active');
+        $('tab-noticias').style.display = 'block';
+        $('noticia-titulo').scrollIntoView({behavior:'smooth', block:'center'});
+      }
+    }
+  });
+
+  document.addEventListener('click', (e)=>{
+    if(e.target.classList.contains('del')){
+      const idx = +e.target.dataset.idx, type = e.target.dataset.type;
+      if(type === 'vaga'){ const d = readStore(KEY_VAGAS); d.splice(idx,1); writeStore(KEY_VAGAS,d); renderAll(); }
+      if(type === 'noticia'){ const d = readStore(KEY_NOTICIAS); d.splice(idx,1); writeStore(KEY_NOTICIAS,d); renderAll(); }
+      if(type === 'mensagem'){ const d = readStore(KEY_MENSAGENS); d.splice(idx,1); writeStore(KEY_MENSAGENS,d); renderAtendimento(); }
+    }
+  });
+
+  // Número de WhatsApp de teste informado para receber as mensagens.
+  const WHATSAPP_NUMERO = "5549988926261";
+
+  function abrirWhatsApp(texto){
+    const url = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(texto)}`;
+    window.open(url, '_blank');
+  }
+
+  function abrirCadastro(vagaTitulo){
+    $('cadastro-success').classList.remove('show'); $('cadastro-error').classList.remove('show');
+    $('form-candidatura').reset();
+    const titulo = vagaTitulo || 'Cadastro geral';
+    $('vaga-selecionada-nome').textContent = titulo;
+    $('cad-vaga').value = titulo;
+    openModal('modal-cadastro');
+  }
+
+  $('form-candidatura').addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const form = e.target;
+    if(!form.checkValidity()){ form.reportValidity(); return; }
+    const vaga = $('cad-vaga').value.trim();
+    const nome = $('cad-nome').value.trim();
+    const resumo = $('cad-resumo').value.trim();
+    const texto = `💼 *CANDIDATURA PARA VAGA DE EMPREGO*\n`
+      + `• *Vaga Pretendida:* ${vaga}\n`
+      + `• *Nome do Candidato:* ${nome}\n`
+      + `• *Resumo Profissional:* ${resumo}`;
+    $('cadastro-error').classList.remove('show');
+    $('cadastro-success').classList.add('show');
+    registrarMensagem('candidatura', {vaga, nome, resumo});
+    abrirWhatsApp(texto);
+    setTimeout(()=> closeModal('modal-cadastro'), 1800);
+  });
+
+  qsa('.assunto-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      qsa('.assunto-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      $('contato-assunto').value = btn.dataset.assunto;
+    });
+  });
+
+  $('form-contato').addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const form = e.target;
+    if(!form.checkValidity()){ form.reportValidity(); return; }
+    const assunto = $('contato-assunto').value.trim();
+    const emailCliente = $('contato-email').value.trim();
+    const telefone = $('contato-telefone').value.trim();
+    const mensagem = $('contato-mensagem').value.trim();
+    const texto = `📢 *NOVO CONTATO VIA PORTAL INSTITUCIONAL*\n`
+      + `• *Assunto:* ${assunto}\n`
+      + `• *E-mail do Cliente:* ${emailCliente}\n`
+      + `• *Telefone/WhatsApp:* ${telefone}\n`
+      + `• *Mensagem enviada:* ${mensagem}`;
+    $('contato-error').classList.remove('show');
+    $('contato-success').classList.add('show');
+    registrarMensagem('contato', {email: emailCliente, telefone, assunto, mensagem});
+    abrirWhatsApp(texto);
+    form.reset();
+    qsa('.assunto-btn').forEach(b=>b.classList.remove('active'));
+  });
+
+  $('btn-checklist').addEventListener('click', ()=> openModal('modal-checklist'));
+  $('btn-checklist-mobile').addEventListener('click', ()=>{ $('mobile-nav').classList.remove('active'); openModal('modal-checklist'); });
+  const checklistBoxes = () => qsa('#checklist-items input[type="checkbox"]');
+  function updateChecklistBar(){
+    const boxes = checklistBoxes();
+    const checked = [...boxes].filter(b=>b.checked).length;
+    $('checklist-bar').style.width = (checked / boxes.length * 100) + '%';
+  }
+  checklistBoxes().forEach(b => b.addEventListener('change', updateChecklistBar));
+  $('btn-checklist-reset').addEventListener('click', ()=>{ checklistBoxes().forEach(b => b.checked = false); updateChecklistBar(); });
+
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){ entry.target.style.animationPlayState = 'running'; observer.unobserve(entry.target); }
+    });
+  }, {threshold:0.15});
+  qsa('.reveal').forEach(el=>{ el.style.animationPlayState = 'paused'; observer.observe(el); });
+})();
+</script>
+
+</body>
+</html> 
